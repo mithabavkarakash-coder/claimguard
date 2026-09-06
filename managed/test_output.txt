@@ -1,0 +1,23 @@
+============================================================
+CLAIMGUARD RUST INTEGRATION TEST SUITE RESULTS
+============================================================
+$ cargo test -p claimguard-tests
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running unittests src\lib.rs (target\debug\deps\claimguard_tests-5740cca73fc8fb8b.exe)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests\circuit_validation.rs (target\debug\deps\circuit_validation-a85832e166ef3866.exe)
+
+running 4 tests
+test test_claim_exceeding_deductible_limit_rejected ... ok
+test test_duplicate_claim_submission_rejected ... ok
+test test_uncovered_procedure_code_rejected ... ok
+test test_valid_claim_within_policy_limits_approved ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+============================================================
+SUMMARY: 4/4 INTEGRATION TESTS PASSED CLEANLY
+============================================================
