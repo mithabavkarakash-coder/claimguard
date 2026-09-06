@@ -1,0 +1,47 @@
+name: ClaimGuard Rust CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-test-lint:
+    name: Rust Build, Compact Compile, Test & Clippy Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Set up Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Rust Cache
+        uses: Swatinem/rust-cache@v2
+
+      - name: Cargo Build Workspace
+        run: cargo build --workspace --verbose
+
+      - name: Compile Compact Contract & Circuits via Rust CLI
+        run: cargo run -p claimguard-cli -- compile
+
+      - name: Run Rust Integration Test Suite
+        run: cargo test --workspace --verbose
+
+      - name: Run Clippy Linter (-D warnings)
+        run: cargo clippy --workspace -- -D warnings
+
+      - name: Build Frontend React Bundle
+        run: |
+          cd frontend
+          npm install
+          npm run build

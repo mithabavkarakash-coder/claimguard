@@ -1,5 +1,10 @@
 # ClaimGuard (Stellar Pharma Chain - SPC) 🛡️⚕️
 
+![CI Status](https://github.com/mithabavkarakash-coder/Stellar-Pharma-Chain-SPC-/actions/workflows/ci.yml/badge.svg)
+![Midnight Preprod](https://img.shields.io/badge/Midnight-Preprod_Testnet-cyan)
+![Rust Workspace](https://img.shields.io/badge/Rust-Cargo_Workspace-orange)
+![Compact ZK](https://img.shields.io/badge/Compact-ZK_Circuits-indigo)
+
 > **Zero-Knowledge Healthcare Claim Validation on the Midnight Network**
 
 ClaimGuard is a privacy-preserving healthcare insurance claim validation platform built on the Midnight Network using Compact smart contracts and Rust. By leveraging zero-knowledge proofs (ZKPs), ClaimGuard enables policyholders and healthcare providers to verify claim eligibility, check policy deductible limits, and authorize payment amounts on-chain without exposing sensitive medical diagnosis codes, procedure details, or treatment records to public ledger observers or third parties.
