@@ -132,7 +132,7 @@ export default function App() {
           const limit = parseFloat(deductibleLimit);
 
           const isValid = allowedProcedures.includes(procCode) && amt <= limit;
-          const status = isValid ? 'Approved' : 'Rejected';
+          const status: 'Approved' | 'Rejected' = isValid ? 'Approved' : 'Rejected';
           const authorizedAmount = isValid ? amt : 0;
 
           const randomCommitment = '0x' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
