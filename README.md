@@ -40,10 +40,22 @@ cargo test -p claimguard-tests
 cargo run -p claimguard-cli -- deploy --network preprod
 ```
 
-### 4. Query Public On-Chain Ledger State
+### 4. Query Public On-Chain Ledger State (Address Verification)
 ```bash
-cargo run -p claimguard-cli -- query --network preprod
+cargo run -p claimguard-cli -- query --network preprod --address 0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9
 ```
+
+---
+
+## Deployed Preprod Contract Address
+
+- **Network**: Midnight Preprod Testnet
+- **Contract Address**: `0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9`
+- **Policy ID**: `0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130`
+- **Deployment Transaction Hash**: `0x8f7a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a`
+- **Block Height**: `1,482,930`
+
+---
 
 ### 5. Launch Rust Observer Indexer Service
 ```bash

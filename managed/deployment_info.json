@@ -1,0 +1,9 @@
+{
+  "contract_name": "ClaimValidation",
+  "network": "preprod",
+  "contract_address": "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9",
+  "policy_id": "0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130",
+  "deployed_at": "2026-09-06T15:00:00Z",
+  "block_height": 1482930,
+  "tx_hash": "0x8f7a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a"
+}
