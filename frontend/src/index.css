@@ -1,42 +1,36 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* ClaimGuard Vanilla CSS Design System */
+:root {
+  --bg-dark: #030712;
+  --panel-bg: rgba(15, 23, 42, 0.75);
+  --panel-accent: rgba(30, 41, 59, 0.85);
+  --border-cyan: rgba(56, 189, 248, 0.2);
+  --border-indigo: rgba(129, 140, 248, 0.25);
+  --cyan-accent: #38bdf8;
+  --indigo-accent: #818cf8;
+  --emerald-accent: #34d399;
+  --rose-accent: #f87171;
+}
 
-@layer base {
-  body {
-    background-color: #030712;
-    color: #f8fafc;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
 }
 
 .glass-panel {
-  background: rgba(15, 23, 42, 0.75);
+  background: var(--panel-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(56, 189, 248, 0.15);
+  border: 1px solid var(--border-cyan);
   border-radius: 1rem;
-}
-
-.glass-panel-accent {
-  background: rgba(30, 41, 59, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(129, 140, 248, 0.25);
-  border-radius: 1rem;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.gradient-border {
-  position: relative;
-  border-radius: 1rem;
-  background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(192, 132, 252, 0.3));
-  padding: 1px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
 }
 
 .pulse-cyan {
