@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-secondary-container":"#00217a","on-secondary-fixed":"#001453","background":"#faf8ff","on-surface":"#131b2e","inverse-on-surface":"#eef0ff","on-surface-variant":"#434654","surface-variant":"#dae2fd","primary-fixed":"#dbe1ff","on-tertiary-fixed":"#001a42","on-primary-fixed":"#00174c","on-tertiary-container":"#c6d6ff","primary":"#003ca7","surface-bright":"#faf8ff","inverse-surface":"#283044","on-secondary-fixed-variant":"#173bab","secondary-fixed-dim":"#b8c4ff","tertiary-fixed-dim":"#adc6ff","outline":"#737686","on-tertiary-fixed-variant":"#004395","on-secondary":"#ffffff","surface-container":"#eaedff","surface-container-high":"#e2e7ff","outline-variant":"#c3c6d7","secondary":"#3755c3","on-error-container":"#93000a","error":"#ba1a1a","primary-fixed-dim":"#b4c5ff","inverse-primary":"#b4c5ff","on-background":"#131b2e","surface":"#faf8ff","on-primary-container":"#cbd5ff","surface-tint":"#1053d7","surface-container-lowest":"#ffffff","tertiary-container":"#0059c0","on-tertiary":"#ffffff","on-primary-fixed-variant":"#003da9","surface-dim":"#d2d9f4","error-container":"#ffdad6","on-primary":"#ffffff","on-error":"#ffffff","tertiary":"#004293","surface-container-low":"#f2f3ff","secondary-fixed":"#dde1ff","tertiary-fixed":"#d8e2ff","surface-container-highest":"#dae2fd","secondary-container":"#708cfd","primary-container":"#0d52d6"},borderRadius:{DEFAULT:"0.25rem",lg:"0.5rem",xl:"0.75rem",full:"9999px"},spacing:{"gutter-tablet":"1.5rem","space-lg":"1.5rem","margin-tablet":"2rem","space-3xl":"4rem","margin-mobile":"1rem","gutter-desktop":"2rem","space-xs":"0.25rem","space-xl":"2rem","space-base":"1rem","margin-desktop":"3rem","space-sm":"0.5rem","space-2xs":"0.125rem","space-2xl":"3rem","space-md":"0.75rem","gutter-mobile":"1rem"},fontFamily:{"body-sm":["Inter"],"label-code":["JetBrains Mono"],"label-caps":["Inter"],"headline-md":["Inter"],"display-lg":["Inter"],"body-lg":["Inter"],"body-md":["Inter"],"headline-xl":["Inter"],"display-lg-mobile":["Inter"],"headline-xl-mobile":["Inter"],"headline-lg":["Inter"],"label-numeric":["Inter"]},fontSize:{"body-sm":["0.8125rem",{lineHeight:"1.25rem",letterSpacing:"0.005em",fontWeight:"400"}],"label-code":["0.8125rem",{lineHeight:"1.125rem",letterSpacing:"-0.01em",fontWeight:"500"}],"label-caps":["0.6875rem",{lineHeight:"1rem",letterSpacing:"0.06em",fontWeight:"700"}],"headline-md":["1.25rem",{lineHeight:"1.75rem",letterSpacing:"-0.01em",fontWeight:"600"}],"display-lg":["3.5rem",{lineHeight:"4rem",letterSpacing:"-0.03em",fontWeight:"700"}],"body-lg":["1.125rem",{lineHeight:"1.75rem",letterSpacing:"-0.005em",fontWeight:"400"}],"body-md":["0.9375rem",{lineHeight:"1.5rem",letterSpacing:"0em",fontWeight:"400"}],"headline-xl":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"600"}],"display-lg-mobile":["2.25rem",{lineHeight:"2.75rem",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-xl-mobile":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.015em",fontWeight:"600"}],"headline-lg":["1.75rem",{lineHeight:"2.25rem",letterSpacing:"-0.015em",fontWeight:"600"}],"label-numeric":["0.875rem",{lineHeight:"1.25rem",letterSpacing:"-0.01em",fontWeight:"600"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]"><div class="h-16 w-full max-w-[1600px] mx-auto px-gutter-desktop flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-xl"><div class="flex items-center gap-space-sm"><img alt="AegisHealth Fintech Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WLFVf6uv1hGxaBPgHYhCS1OdWMZMQghPQOgQvTYTdiqMkFP7Cut0vC3FuNw6OB6RNt3E85RPgi80zt4xW5-2Xb4w-moPaY6uyFL8JsGw33Euf9GB2VpNxyimp_cmxe_FF53nelvD4XkwrS4k__oCqWCllLkFVGTVqhwSSlO1rVmb22N3sEMmwy_YPI6qiOGLYL4uxZlqQpuK5cZDQzCwA9Ql_P-UCy1gH6e-z6KyDvbb00ZA-Dq17vPW4B"/><span class="font-headline-md text-headline-md tracking-tight text-on-surface">AegisHealth</span></div><nav class="hidden xl:flex items-center gap-space-lg h-16" data-active-classes="text-primary font-semibold border-b-2 border-primary"><a aria-current="page" class="transition-colors flex items-center h-full px-space-xs text-primary font-semibold border-b-2 border-primary" data-path="claims-submission" href="#">Claims Submission</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center h-full px-space-xs" data-path="claims-registry" href="#">Claims Registry</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center h-full px-space-xs" data-path="on-chain-explorer" href="#">On-Chain Explorer</a><a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors flex items-center h-full px-space-xs" data-path="compliance-audit" href="#">Compliance &amp; Audit</a></nav></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container-low border border-outline-variant"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cardano / Midnight Privacy Testnet</span></div><div class="flex items-center gap-space-sm pl-space-xs"><button class="flex items-center gap-space-xs px-space-md py-space-xs bg-primary hover:bg-tertiary text-on-primary rounded-lg transition-colors shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]" type="button"><span class="material-symbols-outlined text-[18px]">account_balance_wallet</span><span class="font-label-numeric text-label-numeric font-semibold">Connect Wallet</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></div></header><main class="w-full pt-16 bg-background min-h-[calc(100vh-80px)]"><div class="flex flex-col w-full">
+<!-- Dynamic Notification / Top Breadcrumb Bar -->
+<section class="w-full max-w-[1600px] mx-auto px-gutter-desktop py-space-md flex flex-wrap items-center justify-between gap-space-base">
+<div class="flex items-center gap-space-sm">
+<div class="flex items-center gap-space-xs px-space-sm py-space-2xs rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps uppercase">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span>
+        Cardano Mainnet / Midnight ZKP Dual-Chain
+      </div>
+<span class="text-on-surface-variant/40 font-body-sm">/</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Identity &amp; Key Custody</span>
+<span class="text-on-surface-variant/40 font-body-sm">/</span>
+<span class="font-body-sm text-body-sm font-semibold text-primary">Lace CIP-30 Gateway</span>
+</div>
+<!-- Live Wallet Status Simulator Controller -->
+<div class="flex items-center gap-space-md">
+<div class="flex items-center p-1 rounded-xl bg-surface-container-high shadow-inner">
+<button class="px-space-md py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all bg-surface-container-lowest text-primary shadow-sm" id="toggleDisconnectedBtn" onclick="setWalletState(false)">
+          Simulate Disconnected
+        </button>
+<button class="px-space-md py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all text-on-surface-variant hover:text-on-surface" id="toggleConnectedBtn" onclick="setWalletState(true)">
+          Simulate Connected
+        </button>
+</div>
+<!-- Main Trigger Dropdown Anchor for Top Right -->
+<div class="relative" id="walletDropdownContainer">
+<!-- Disconnected State Trigger -->
+<button class="flex items-center gap-space-sm px-space-lg py-2.5 bg-primary hover:bg-tertiary text-on-primary rounded-xl transition-all shadow-[0_1px_3px_0_rgba(15,23,42,0.06)] hover:shadow-md active:scale-[0.98]" id="topConnectLaceTrigger" onclick="openWalletModal()">
+<div class="w-5 h-5 rounded-full bg-surface-container-lowest flex items-center justify-center p-0.5 shrink-0">
+<svg class="w-full h-full" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#131B2E"></path>
+<path d="M7 14.5C8.5 16 11 16.5 13 15C15 13.5 16.5 14 17 14.5" stroke="#FFFFFF" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="9" cy="9" fill="#FFFFFF" r="1.5"></circle>
+<circle cx="15" cy="9" fill="#FFFFFF" r="1.5"></circle>
+</svg>
+</div>
+<span class="font-label-numeric text-label-numeric font-semibold tracking-tight">Connect Lace Wallet</span>
+<span class="material-symbols-outlined text-[18px]">expand_more</span>
+</button>
+<!-- Connected State Badge (Hidden initially until toggled or connected) -->
+<div class="hidden items-center gap-space-xs p-1.5 pl-space-md pr-1.5 bg-surface-container-lowest rounded-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]" id="topConnectedBadge">
+<div class="flex items-center gap-2 pr-space-xs">
+<span class="relative flex h-2.5 w-2.5">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+</span>
+<div class="flex flex-col">
+<span class="font-label-code text-label-code font-bold text-on-surface leading-tight tracking-tight">addr1...9x4e</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant font-semibold leading-tight">₳ 1,420.50 ADA</span>
+</div>
+</div>
+<button class="px-2.5 py-1.5 rounded-lg bg-surface-container-low hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1" onclick="toggleWalletDrawer()">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span class="material-symbols-outlined text-[16px]">expand_more</span>
+</button>
+</div>
+<!-- Interactive Connected Management Drawer/Popover -->
+<div class="hidden absolute right-0 mt-2 w-80 rounded-2xl bg-surface-container-lowest p-space-lg shadow-[0_20px_25px_-5px_rgba(15,23,42,0.08),0_8px_10px_-6px_rgba(15,23,42,0.04)] z-50" id="walletDetailsPopover">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Lace v1.14.0 Connected</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-[11px] font-label-code text-primary font-bold">Ledger Nano X</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low mb-space-md">
+<div class="text-xs text-on-surface-variant mb-1 font-body-sm">Active Cardano Clinical Account</div>
+<div class="flex items-center justify-between">
+<span class="font-label-code text-body-sm font-semibold text-on-surface">addr1q8x9...08z9x4e</span>
+<button class="text-primary hover:text-tertiary" onclick="navigator.clipboard.writeText('addr1q8x94ed3920akslw02948271038102938472901847102938479x4e')" title="Copy Address">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+<div class="mt-2 pt-2 flex items-center justify-between">
+<span class="text-xs font-medium text-on-surface-variant">Available Balance</span>
+<span class="font-label-numeric text-headline-md font-bold text-on-surface">₳ 1,420.50</span>
+</div>
+<div class="text-[11px] text-right text-on-surface-variant font-label-code">≈ $937.53 USD</div>
+</div>
+<div class="space-y-2 mb-space-lg text-xs font-body-sm text-on-surface-variant">
+<div class="flex justify-between items-center py-1">
+<span>CIP-30 Sign Session</span>
+<span class="font-label-code text-emerald-600 font-medium">Valid (18m 42s)</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span>Proof Signing Scope</span>
+<span class="font-label-caps text-primary font-bold">BATCH_SETTLE_CLAIM</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span>Stake Key</span>
+<span class="font-label-code text-on-surface">stake1ux...88a91</span>
+</div>
+</div>
+<div class="pt-space-sm flex flex-col gap-2">
+<button class="w-full flex items-center justify-center gap-space-xs py-2.5 px-space-md rounded-xl bg-error-container text-on-error-container hover:bg-error hover:text-on-error font-label-numeric text-label-numeric font-semibold transition-all" onclick="setWalletState(false)">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+              Disconnect Wallet
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Hero Context Banner with Clinical Integrity Focus -->
+<section class="w-full max-w-[1600px] mx-auto px-gutter-desktop pt-space-xs pb-space-lg">
+<div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary to-tertiary-container p-space-xl text-on-primary shadow-[0_4px_6px_-1px_rgba(13,82,214,0.08)]">
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="max-w-3xl">
+<div class="flex items-center gap-space-xs mb-space-xs">
+<span class="px-space-sm py-0.5 rounded-full bg-surface-container-lowest/20 backdrop-blur-sm text-on-primary font-label-caps text-[10px] tracking-widest uppercase">
+              Cryptographic Signer Identity
+            </span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-container-lowest/60"></span>
+<span class="font-body-sm text-body-sm text-on-primary-container">IOG / Lace Browser Extension</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-primary tracking-tight font-bold">
+            Physician Settlement Key &amp; Lace CIP-30 Gateway
+          </h1>
+<p class="font-body-md text-body-md text-on-primary-container mt-space-xs leading-relaxed max-w-2xl">
+            AegisHealth requires an authenticated Cardano wallet provider via CIP-30 to verify medical adjudications, endorse Zero-Knowledge SNARK proofs, and authorize immediate liquidity releases from institutional payor pools.
+          </p>
+</div>
+<div class="flex items-center gap-space-md shrink-0">
+<div class="flex flex-col items-end px-space-lg py-space-sm rounded-xl bg-surface-container-lowest/10 backdrop-blur-md">
+<span class="text-xs font-label-caps uppercase text-on-primary-container tracking-wider">Protocol Security Level</span>
+<span class="font-label-numeric text-headline-md font-bold text-on-primary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-emerald-300 text-[20px]">enhanced_encryption</span>
+              MIL-SPEC CIP-30
+            </span>
+<span class="text-[11px] text-on-primary-container/80">Zero PHI Transmitted On-Chain</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Central Dashboard Content Grid -->
+<section class="w-full max-w-[1600px] mx-auto px-gutter-desktop pb-space-3xl">
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-xl items-start">
+<!-- Left Column: Primary State Card (Empty State vs Active Dashboard) (8 Cols) -->
+<div class="xl:col-span-8 flex flex-col gap-space-xl">
+<!-- STATE 1: Empty / Disconnected Guidance View -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-2xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col items-center text-center transition-all" id="disconnectedCard">
+<div class="relative w-24 h-24 mb-space-lg">
+<div class="absolute inset-0 rounded-full bg-primary/10 animate-pulse"></div>
+<div class="relative w-24 h-24 rounded-full bg-surface-container flex items-center justify-center shadow-inner">
+<span class="material-symbols-outlined text-[44px] text-primary">key_off</span>
+</div>
+<div class="absolute -bottom-1 -right-1 w-8 h-8 rounded-full bg-surface-container-lowest shadow-md flex items-center justify-center">
+<div class="w-5 h-5 rounded-full bg-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant text-[14px]">lock</span>
+</div>
+</div>
+</div>
+<div class="max-w-lg">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 text-amber-800 text-xs font-semibold mb-space-sm">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              Digital Signature Required for Batch Claim Settlement
+            </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-semibold tracking-tight">
+              Connect Lace Wallet to Authorize Claims
+            </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+              Medical practitioners must authenticate using the Lace browser extension or a connected hardware enclave (Ledger / Keystone). Your cryptographic signature generates the unforgeable zero-knowledge proof needed to disburse funds.
+            </p>
+</div>
+<!-- Feature checklist before connect -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md w-full my-space-xl text-left">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[20px]">fingerprint</span>
+</div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">CIP-30 Handshake</div>
+<p class="text-xs text-on-surface-variant mt-1 font-body-sm">Standardized, sandboxed API connection with strict permission boundaries.</p>
+</div>
+<span class="font-label-caps text-[10px] text-primary font-bold uppercase tracking-wider mt-3">Read &amp; Sign Only</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[20px]">lock_clock</span>
+</div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">ZK Proof Attestation</div>
+<p class="text-xs text-on-surface-variant mt-1 font-body-sm">Signs Merkle root batches without exposing HIPAA-protected clinical records.</p>
+</div>
+<span class="font-label-caps text-[10px] text-primary font-bold uppercase tracking-wider mt-3">Midnight Sidechain</span>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col justify-between">
+<div>
+<div class="w-8 h-8 rounded-lg bg-surface-container-high flex items-center justify-center text-primary mb-2">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Hardware Cold Key</div>
+<p class="text-xs text-on-surface-variant mt-1 font-body-sm">Compatible with Ledger Stax, Flex, and Nano models via Lace direct bridge.</p>
+</div>
+<span class="font-label-caps text-[10px] text-primary font-bold uppercase tracking-wider mt-3">EAL5+ Hardware Cert</span>
+</div>
+</div>
+<!-- Direct CTA -->
+<div class="flex flex-col sm:flex-row items-center gap-space-md w-full max-w-md">
+<button class="w-full flex items-center justify-center gap-space-sm px-space-xl py-3.5 bg-primary hover:bg-tertiary text-on-primary rounded-xl font-label-numeric text-label-numeric font-semibold transition-all shadow-[0_4px_6px_-1px_rgba(13,82,214,0.12)] active:scale-[0.98]" onclick="simulateConnectFlow()">
+<span class="material-symbols-outlined text-[20px]">account_balance_wallet</span>
+              Launch Lace Connection Modal
+            </button>
+<a class="w-full sm:w-auto px-space-lg py-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container text-on-surface font-label-numeric text-label-numeric font-semibold transition-colors text-center shrink-0" href="https://www.lace.io" rel="noopener" target="_blank">
+              Install Lace
+            </a>
+</div>
+<div class="mt-space-lg flex items-center gap-space-xs text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-emerald-600">lock</span>
+            Private keys never leave your browser enclave. AegisHealth never requests spending authority over your primary UTxOs.
+          </div>
+</div>
+<!-- STATE 2: Active Connected Dashboard View (Shown when toggled) -->
+<div class="hidden flex-col gap-space-xl" id="connectedCard">
+<!-- Top Telemetry Row for Connected Wallet -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col md:flex-row items-start md:items-center justify-between gap-space-base">
+<div class="flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary relative">
+<span class="material-symbols-outlined text-[28px]">key</span>
+<span class="absolute -top-1 -right-1 flex h-3 w-3">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Dr. Evelyn Vance, MD</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-primary font-label-caps text-[10px] font-bold">NPI: 1892049182</span>
+</div>
+<div class="flex items-center gap-space-sm mt-0.5">
+<span class="font-label-code text-label-code text-on-surface-variant">addr1q8x9z...8479x4e</span>
+<span class="text-on-surface-variant/40">•</span>
+<span class="font-body-sm text-body-sm text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> CIP-30 Handshake Active
+                  </span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-stretch md:self-auto justify-between md:justify-end pt-space-xs md:pt-0">
+<div class="text-right">
+<span class="text-[11px] font-label-caps uppercase text-on-surface-variant">Collateral Reserved</span>
+<div class="font-label-numeric text-label-numeric font-bold text-on-surface">5.00 ADA</div>
+</div>
+<div class="h-8 w-px bg-surface-container"></div>
+<div class="text-right">
+<span class="text-[11px] font-label-caps uppercase text-on-surface-variant">Settlement Pool Balance</span>
+<div class="font-label-numeric text-headline-md font-bold text-primary">₳ 1,420.50</div>
+</div>
+</div>
+</div>
+<!-- Interactive Cryptographic Signing Status & Permission Delegation -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-base pb-space-lg mb-space-lg">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase font-bold tracking-widest">Active Verification Envelope</span>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">CIP-30 Cryptographic Delegation Matrix</h3>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="px-space-md py-1 rounded-full bg-surface-container-low text-on-surface-variant font-label-code text-label-code">
+                  Session Token: #ZK-8921-ADJ
+                </span>
+</div>
+</div>
+<!-- Permissions Matrix Table -->
+<div class="space-y-space-sm mb-space-xl">
+<!-- Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Payload Hash Attestation (cip30.signData)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Endorses encrypted ICD-10/CPT Merkle roots to Cardano L1 ledger.</div>
+</div>
+</div>
+<span class="px-space-md py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold shrink-0">Authorized</span>
+</div>
+<!-- Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+</div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Zero-Knowledge State Root Sync (Midnight Protocol)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Allows selective zero-knowledge revelation of clinical necessity proofs.</div>
+</div>
+</div>
+<span class="px-space-md py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold shrink-0">Authorized</span>
+</div>
+<!-- Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-8 h-8 rounded-lg bg-surface-container text-on-surface-variant flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">block</span>
+</div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Direct Treasury Liquidation (cip30.signTx)</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant">Autonomous asset re-allocation without explicit secondary confirmation.</div>
+</div>
+</div>
+<span class="px-space-md py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-semibold shrink-0">Revoked / Sandboxed</span>
+</div>
+</div>
+<!-- Ledger Verification Stepper (from style guide) -->
+<div class="p-space-lg rounded-xl bg-surface-container-lowest">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Claims Signing Pipeline Readiness</span>
+<span class="font-label-code text-xs text-primary font-bold">Block Height: 10,942,391</span>
+</div>
+<div class="relative flex items-center justify-between w-full">
+<!-- Connector Track -->
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-surface-container"></div>
+<div class="absolute left-0 top-1/2 -translate-y-1/2 w-2/3 h-0.5 bg-primary"></div>
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-caps text-[10px] font-bold text-primary mt-1">Adjudication</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">Validated</span>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shadow-sm">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<span class="font-label-caps text-[10px] font-bold text-primary mt-1">Lace CIP-30</span>
+<span class="font-label-code text-[9px] text-primary">Connected</span>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs font-bold shadow-sm ring-4 ring-primary/20">
+<span class="material-symbols-outlined text-[14px] animate-spin">refresh</span>
+</div>
+<span class="font-label-caps text-[10px] font-bold text-primary mt-1">ZK Signing</span>
+<span class="font-label-code text-[9px] text-amber-600">Pending Input</span>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col items-center">
+<div class="w-7 h-7 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center text-xs font-bold shadow-sm">
+                    4
+                  </div>
+<span class="font-label-caps text-[10px] font-bold text-on-surface-variant mt-1">Settlement</span>
+<span class="font-label-code text-[9px] text-on-surface-variant">Awaiting Proof</span>
+</div>
+</div>
+</div>
+<!-- Cryptographic Hash Inset Well -->
+<div class="mt-space-lg p-space-md rounded-xl bg-surface-container-low font-label-code text-body-sm text-on-surface">
+<div class="flex items-center justify-between mb-1.5">
+<span class="font-label-caps text-[10px] text-on-surface-variant uppercase tracking-wider">Active Practitioner Public Key Hash (Vance-Endorsement-Key)</span>
+<button class="text-primary hover:text-tertiary flex items-center gap-1 text-xs" onclick="navigator.clipboard.writeText('0x9a8f273b4c10e8d927a4b8c910293847562019283746592019283746e4b1029')">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copy Hash</span>
+</button>
+</div>
+<div class="break-all text-xs font-semibold text-on-surface selection:bg-primary-container">
+                0x9a8f273b4c10e8d927a4b8c910293847562019283746592019283746e4b1029
+              </div>
+</div>
+</div>
+<!-- Pending Claims Ready For Lace Signatures -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-xl shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
+<div class="flex items-center justify-between mb-space-lg">
+<div>
+<h4 class="font-headline-md text-headline-md font-bold text-on-surface">Claims Queue Awaiting Lace Cryptographic Signature</h4>
+<p class="text-xs text-on-surface-variant font-body-sm mt-0.5">Signed batches automatically trigger decentralized escrow disbursement via smart contract.</p>
+</div>
+<button class="px-space-md py-2 bg-primary hover:bg-tertiary text-on-primary rounded-lg text-xs font-semibold tracking-wide flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">draw</span>
+                Sign Batch (2 Claims)
+              </button>
+</div>
+<div class="space-y-space-sm">
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center font-label-code text-xs font-bold text-primary">
+                    #CLM-82
+                  </div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Cardiology Consultation &amp; Stent Post-Op</div>
+<div class="text-xs text-on-surface-variant font-body-sm">Patient ID: <span class="font-label-code">0x7F...2B19</span> • ICD-10: I25.10 • CPT: 99214</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg justify-between md:justify-end">
+<div class="text-right">
+<span class="text-[10px] font-label-caps uppercase text-on-surface-variant">Reimbursement</span>
+<div class="font-label-numeric text-body-lg font-bold text-on-surface">₳ 312.40 ADA</div>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-amber-50 text-amber-800 border-amber-200 text-xs font-medium">
+                    Awaiting Lace Sig
+                  </span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-low flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center font-label-code text-xs font-bold text-primary">
+                    #CLM-89
+                  </div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">MRI Lumbar Spine W/O Contrast</div>
+<div class="text-xs text-on-surface-variant font-body-sm">Patient ID: <span class="font-label-code">0x3A...91E4</span> • ICD-10: M54.5 • CPT: 72148</div>
+</div>
+</div>
+<div class="flex items-center gap-space-lg justify-between md:justify-end">
+<div class="text-right">
+<span class="text-[10px] font-label-caps uppercase text-on-surface-variant">Reimbursement</span>
+<div class="font-label-numeric text-body-lg font-bold text-on-surface">₳ 580.00 ADA</div>
+</div>
+<span class="px-space-sm py-1 rounded-full bg-amber-50 text-amber-800 border-amber-200 text-xs font-medium">
+                    Awaiting Lace Sig
+                  </span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Verification, Hardware Attestation, & Security Specs (4 Cols) -->
+<div class="xl:col-span-4 flex flex-col gap-space-lg">
+<!-- Live Hardware Enclave Card -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">usb</span>
+<h4 class="font-headline-md text-body-md font-bold text-on-surface">Hardware Authenticator</h4>
+</div>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span> Paired
+            </span>
+</div>
+<p class="text-xs text-on-surface-variant font-body-sm mb-space-md">
+            Lace extension utilizes WebHID bridge for cold storage sign-offs. Zero raw keys are held in browser runtime memory.
+          </p>
+<div class="p-space-md rounded-xl bg-surface-container-low space-y-space-xs">
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Device Model</span>
+<span class="font-semibold text-on-surface">Ledger Nano X</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Cardano App Version</span>
+<span class="font-label-code text-on-surface font-semibold">v6.1.2</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Root Derivation Path</span>
+<span class="font-label-code text-on-surface">m/1852'/1815'/0'</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-on-surface-variant">Firmware Security State</span>
+<span class="text-emerald-700 font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified</span> Secure Enclave OK
+              </span>
+</div>
+</div>
+</div>
+<!-- Session Validity Countdown Clock -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Delegation Session Clock</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">timer</span>
+</div>
+<div class="flex items-baseline gap-space-xs mb-space-xs">
+<span class="font-label-numeric text-headline-xl font-bold text-on-surface tracking-tight" id="countdownTimer">18:42</span>
+<span class="text-xs text-on-surface-variant font-body-sm">remaining before re-auth</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden mb-space-md">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" id="countdownBar" style="width: 62%;"></div>
+</div>
+<p class="text-xs text-on-surface-variant font-body-sm leading-relaxed mb-space-md">
+            To satisfy stringent HIPAA Section §164.312 authentication controls, medical claim attestation sessions automatically expire after 30 minutes of practitioner inactivity.
+          </p>
+<button class="w-full py-2 px-space-md rounded-xl bg-surface-container-low hover:bg-surface-container text-primary font-label-numeric text-xs font-bold transition-colors flex items-center justify-center gap-1" onclick="resetCountdown()">
+<span class="material-symbols-outlined text-[16px]">history</span>
+            Extend Authorization Session (+30m)
+          </button>
+</div>
+<!-- Security Notice & Institutional Safeguards -->
+<div class="bg-surface-container-low rounded-2xl p-space-lg">
+<div class="flex items-center gap-space-xs text-on-surface font-semibold text-body-md mb-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">gavel</span>
+            Institutional Settlement Fiduciary
+          </div>
+<p class="text-xs text-on-surface-variant font-body-sm leading-relaxed mb-space-md">
+            By authenticating with Lace, your public cryptographic endorsement is irreversibly anchored to the Cardano ledger. Smart contracts execute non-custodial payor transfers immediately upon successful multi-sig consensus.
+          </p>
+<div class="space-y-1.5 text-[11px] font-label-caps uppercase tracking-wider text-on-surface-variant">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">check_small</span>
+              EHR / FHIR HL7 Compliant Gateway
+            </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">check_small</span>
+              Cardano CIP-30 Sandboxing Guaranteed
+            </div>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[14px] text-emerald-600">check_small</span>
+              Midnight Zero-Knowledge Proof Privacy Layer
+            </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Lace Connection Modal (Layer 3 Depth Backdrop) -->
+<div class="fixed inset-0 z-50 hidden flex items-center justify-center p-gutter-mobile" id="laceConnectModal">
+<!-- Backdrop blur -->
+<div class="absolute inset-0 bg-inverse-surface/40 backdrop-blur-sm transition-opacity" onclick="closeWalletModal()"></div>
+<!-- Modal Content Window -->
+<div class="relative w-full max-w-lg rounded-2xl bg-surface-container-lowest p-space-xl shadow-[0_20px_25px_-5px_rgba(15,23,42,0.12),0_8px_10px_-6px_rgba(15,23,42,0.06)] z-10">
+<div class="flex items-center justify-between pb-space-sm mb-space-md">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center p-2 text-on-primary">
+<svg class="w-full h-full" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#FFFFFF"></path>
+<path d="M7 14.5C8.5 16 11 16.5 13 15C15 13.5 16.5 14 17 14.5" stroke="#003CA7" stroke-linecap="round" stroke-width="2"></path>
+<circle cx="9" cy="9" fill="#003CA7" r="1.5"></circle>
+<circle cx="15" cy="9" fill="#003CA7" r="1.5"></circle>
+</svg>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Connect Lace Wallet</h3>
+<p class="font-body-sm text-xs text-on-surface-variant">Cardano CIP-30 dApp Provider</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low transition-colors" onclick="closeWalletModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="mb-space-lg">
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          Select an available Cardano CIP-30 instance detected in your secure browser runtime. Ensure your hardware authenticator is unlocked before proceeding.
+        </p>
+</div>
+<!-- Wallet selection list -->
+<div class="space-y-space-sm mb-space-lg">
+<!-- Lace Option (Default Recommended) -->
+<button class="w-full p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-all group text-left" onclick="simulateConnectSuccess('Lace Web Extension')">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm p-2 shrink-0">
+<svg class="w-full h-full" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<circle cx="12" cy="12" fill="#131B2E" r="10"></circle>
+<path d="M7 14C8.5 15.5 11 16 13 14.5C15 13 16.5 13.5 17 14" stroke="#FFFFFF" stroke-linecap="round" stroke-width="1.8"></path>
+<circle cx="9" cy="9.5" fill="#FFFFFF" r="1.2"></circle>
+<circle cx="15" cy="9.5" fill="#FFFFFF" r="1.2"></circle>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-md font-semibold text-on-surface">Lace Browser Wallet</span>
+<span class="px-2 py-0.2 rounded-full bg-primary-fixed text-primary font-label-caps text-[9px] font-bold">Recommended</span>
+</div>
+<span class="font-body-sm text-xs text-on-surface-variant">Detected • CIP-30 v1.14 • Midnight ZK Ready</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-0.5 transition-transform text-[20px]">chevron_right</span>
+</button>
+<!-- Hardware Bridge Option -->
+<button class="w-full p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-all group text-left" onclick="simulateConnectSuccess('Ledger via Lace Bridge')">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm p-2 shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px] text-on-surface">usb</span>
+</div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Ledger Nano / Stax (via Lace)</div>
+<span class="font-body-sm text-xs text-on-surface-variant">Hardware Enclave Isolation • WebHID</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">chevron_right</span>
+</button>
+<!-- Keystone QR Option -->
+<button class="w-full p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container flex items-center justify-between transition-all group text-left" onclick="simulateConnectSuccess('Keystone Airgap via Lace')">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center shadow-sm p-2 shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[24px] text-on-surface">qr_code_scanner</span>
+</div>
+<div>
+<div class="font-headline-md text-body-md font-semibold text-on-surface">Keystone Hardware (Airgap)</div>
+<span class="font-body-sm text-xs text-on-surface-variant">Offline Optical Merkle Signer</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-0.5 transition-transform text-[20px]">chevron_right</span>
+</button>
+</div>
+<div class="pt-space-sm flex items-center justify-between text-xs text-on-surface-variant">
+<a class="hover:text-primary underline flex items-center gap-1" href="https://www.lace.io/faq" target="_blank">
+<span class="material-symbols-outlined text-[14px]">help_outline</span>
+          Trouble finding your Lace extension?
+        </a>
+<span class="font-label-code text-[11px]">API: window.cardano.lace</span>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript Controller -->
+<script>
+    let isConnected = false;
+    let countdownMinutes = 18;
+    let countdownSeconds = 42;
+    let timerInterval = null;
+
+    function setWalletState(connected) {
+      isConnected = connected;
+      const disconnectedCard = document.getElementById('disconnectedCard');
+      const connectedCard = document.getElementById('connectedCard');
+      const topConnectLaceTrigger = document.getElementById('topConnectLaceTrigger');
+      const topConnectedBadge = document.getElementById('topConnectedBadge');
+      const popover = document.getElementById('walletDetailsPopover');
+      const btnDisconnected = document.getElementById('toggleDisconnectedBtn');
+      const btnConnected = document.getElementById('toggleConnectedBtn');
+
+      if (connected) {
+        disconnectedCard.classList.add('hidden');
+        connectedCard.classList.remove('hidden');
+        connectedCard.classList.add('flex');
+        
+        topConnectLaceTrigger.classList.add('hidden');
+        topConnectedBadge.classList.remove('hidden');
+        topConnectedBadge.classList.add('flex');
+
+        // Update Toggle Button Visuals
+        btnConnected.className = "px-space-md py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all bg-surface-container-lowest text-primary shadow-sm";
+        btnDisconnected.className = "px-space-md py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all text-on-surface-variant hover:text-on-surface";
+
+        startCountdown();
+      } else {
+        disconnectedCard.classList.remove('hidden');
+        connectedCard.classList.add('hidden');
+        connectedCard.classList.remove('flex');
+
+        topConnectLaceTrigger.classList.remove('hidden');
+        topConnectedBadge.classList.add('hidden');
+        topConnectedBadge.classList.remove('flex');
+        popover.classList.add('hidden');
+
+        // Update Toggle Button Visuals
+        btnDisconnected.className = "px-space-md py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all bg-surface-container-lowest text-primary shadow-sm";
+        btnConnected.className = "px-space-md py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all text-on-surface-variant hover:text-on-surface";
+      }
+    }
+
+    function openWalletModal() {
+      document.getElementById('laceConnectModal').classList.remove('hidden');
+    }
+
+    function closeWalletModal() {
+      document.getElementById('laceConnectModal').classList.add('hidden');
+    }
+
+    function simulateConnectFlow() {
+      openWalletModal();
+    }
+
+    function simulateConnectSuccess(providerName) {
+      closeWalletModal();
+      setWalletState(true);
+    }
+
+    function toggleWalletDrawer() {
+      const popover = document.getElementById('walletDetailsPopover');
+      popover.classList.toggle('hidden');
+    }
+
+    function startCountdown() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (countdownSeconds === 0) {
+          if (countdownMinutes === 0) {
+            clearInterval(timerInterval);
+            setWalletState(false);
+            return;
+          }
+          countdownMinutes--;
+          countdownSeconds = 59;
+        } else {
+          countdownSeconds--;
+        }
+        updateTimerDisplay();
+      }, 1000);
+    }
+
+    function resetCountdown() {
+      countdownMinutes = 30;
+      countdownSeconds = 0;
+      updateTimerDisplay();
+    }
+
+    function updateTimerDisplay() {
+      const timerEl = document.getElementById('countdownTimer');
+      const barEl = document.getElementById('countdownBar');
+      if (!timerEl || !barEl) return;
+
+      const formatted = `${String(countdownMinutes).padStart(2, '0')}:${String(countdownSeconds).padStart(2, '0')}`;
+      timerEl.innerText = formatted;
+
+      const totalSecondsLeft = (countdownMinutes * 60) + countdownSeconds;
+      const percentage = Math.min(100, Math.max(0, (totalSecondsLeft / 1800) * 100));
+      barEl.style.width = percentage + '%';
+    }
+
+    // Close popover when clicking outside
+    document.addEventListener('click', function(event) {
+      const dropdown = document.getElementById('walletDropdownContainer');
+      const popover = document.getElementById('walletDetailsPopover');
+      if (dropdown && !dropdown.contains(event.target)) {
+        if (popover && !popover.classList.contains('hidden')) {
+          popover.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant py-space-xl"><div class="max-w-[1600px] mx-auto px-gutter-desktop flex flex-col md:flex-row items-center justify-between gap-space-base"><div class="flex items-center gap-space-md"><span class="font-label-code text-label-code text-on-surface-variant">AegisHealth Protocol v2.4.1-zkp</span><span class="text-outline-variant">•</span><span class="font-body-sm text-body-sm text-on-surface-variant">Cryptographic Clinical Settlement Ledger</span></div><div class="font-body-sm text-body-sm text-on-surface-variant">© 2025 AegisHealth Systems. Formally Verified Privacy Settlements.</div></div></footer></body></html>
