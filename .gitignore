@@ -1,0 +1,9 @@
+target/
+node_modules/
+dist/
+.compact-cache/
+managed/*.key
+managed/*.pk
+managed/*.vk
+.env
+*.log
