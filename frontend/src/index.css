@@ -1,42 +1,43 @@
-/* ClaimGuard Vanilla CSS Design System */
-:root {
-  --bg-dark: #030712;
-  --panel-bg: rgba(15, 23, 42, 0.75);
-  --panel-accent: rgba(30, 41, 59, 0.85);
-  --border-cyan: rgba(56, 189, 248, 0.2);
-  --border-indigo: rgba(129, 140, 248, 0.25);
-  --cyan-accent: #38bdf8;
-  --indigo-accent: #818cf8;
-  --emerald-accent: #34d399;
-  --rose-accent: #f87171;
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+    background-color: #faf8ff;
+    color: #131b2e;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  background-color: var(--bg-dark);
-  color: #f8fafc;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  line-height: 1.5;
+/* Tabular numbers for clean numeric alignment */
+.font-tnum {
+  font-feature-settings: "tnum" 1, "cv05" 1;
 }
 
 .glass-panel {
-  background: var(--panel-bg);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-cyan);
+  background: #ffffff;
+  border: 1px solid #c3c6d7;
   border-radius: 1rem;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-}
-
-.pulse-cyan {
-  box-shadow: 0 0 25px rgba(56, 189, 248, 0.25);
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.02);
 }
 
 .code-font {
   font-family: 'JetBrains Mono', monospace;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f2f3ff;
+}
+::-webkit-scrollbar-thumb {
+  background: #c3c6d7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #737686;
 }
