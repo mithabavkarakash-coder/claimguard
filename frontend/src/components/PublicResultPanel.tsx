@@ -27,13 +27,13 @@ export const PublicResultPanel: React.FC<PublicResultPanelProps> = ({
   };
 
   return (
-    <div className="bg-surface-container-lowest rounded-2xl p-6 md:p-8 border border-outline-variant shadow-md flex flex-col gap-6">
+    <div className="bg-surface-container-lowest rounded-2xl p-6 md:p-8 border border-outline-variant shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-6">
       
       {/* Top Header & Identification */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-outline-variant/60">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed-variant font-mono text-xs font-semibold">
+            <span className="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-mono text-xs font-semibold">
               #CLM-88392-MIDNIGHT
             </span>
             <span className="font-mono text-xs text-on-surface-variant">Epoch 492 • Slot 812,044</span>
@@ -43,7 +43,7 @@ export const PublicResultPanel: React.FC<PublicResultPanelProps> = ({
 
         <button
           onClick={handleShare}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface transition-colors shadow-sm text-xs font-semibold cursor-pointer self-start sm:self-auto"
+          className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-surface-container hover:bg-surface-variant text-on-surface transition-colors shadow-sm text-xs font-semibold cursor-pointer self-start sm:self-auto border border-outline-variant/40"
           type="button"
         >
           <span className="material-symbols-outlined text-[16px]">
@@ -66,19 +66,19 @@ export const PublicResultPanel: React.FC<PublicResultPanelProps> = ({
               </span>
 
               {claimResult.status === 'Approved' ? (
-                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 shadow-sm">
+                <div className="inline-flex items-center gap-2.5 px-6 py-2 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-700 shadow-sm">
                   <span className="relative flex h-3 w-3">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-600"></span>
                   </span>
-                  <span className="text-xl font-extrabold">Status: Approved / Settled</span>
+                  <span className="text-lg md:text-xl font-extrabold tracking-tight">Status: Approved / Settled</span>
                 </div>
               ) : (
-                <div className="inline-flex items-center gap-2 px-6 py-2 rounded-full bg-rose-50 border border-rose-200 text-rose-700 shadow-sm">
+                <div className="inline-flex items-center gap-2.5 px-6 py-2 rounded-full bg-rose-50 border border-rose-200 text-rose-700 shadow-sm">
                   <span className="relative flex h-3 w-3">
                     <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-600"></span>
                   </span>
-                  <span className="text-xl font-extrabold">Status: Rejected</span>
+                  <span className="text-lg md:text-xl font-extrabold tracking-tight">Status: Rejected</span>
                 </div>
               )}
             </div>
@@ -115,7 +115,7 @@ export const PublicResultPanel: React.FC<PublicResultPanelProps> = ({
             <span className="text-on-surface-variant">Transaction Hash:</span>
             <span className="text-secondary font-semibold break-all">{claimResult.txHash}</span>
           </div>
-          <div className="flex justify-between pt-1 border-t border-outline-variant/40">
+          <div className="flex justify-between pt-1 border-t border-outline-variant/40 font-sans">
             <span className="text-on-surface-variant">Timestamp:</span>
             <span className="text-on-surface font-semibold">{claimResult.timestamp}</span>
           </div>
@@ -133,3 +133,4 @@ export const PublicResultPanel: React.FC<PublicResultPanelProps> = ({
     </div>
   );
 };
+

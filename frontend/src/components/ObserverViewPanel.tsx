@@ -29,10 +29,10 @@ export const ObserverViewPanel: React.FC<ObserverViewPanelProps> = ({
     <div className="flex flex-col gap-6">
       
       {/* Status Overhead Marquee / Security Proof Anchor */}
-      <div className="w-full bg-surface-container-low rounded-xl p-3 px-4 border border-outline-variant">
+      <div className="w-full bg-surface-container-low rounded-xl p-3 px-4 border border-outline-variant/60 shadow-sm">
         <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
           <div className="flex items-center gap-3">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-[10px] uppercase tracking-wider">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-bold text-[10px] uppercase tracking-wider border border-outline-variant/40">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
               Public Ledger Node Sync
             </span>
@@ -50,7 +50,8 @@ export const ObserverViewPanel: React.FC<ObserverViewPanelProps> = ({
             </span>
             <button
               onClick={onRefresh}
-              className="text-primary hover:text-tertiary transition-colors flex items-center gap-1 font-semibold"
+              className="text-primary hover:text-tertiary transition-colors flex items-center gap-1 font-semibold cursor-pointer"
+              type="button"
             >
               <span>Sync Indexer</span>
               <span className="material-symbols-outlined text-[16px]">sync</span>
@@ -75,7 +76,7 @@ export const ObserverViewPanel: React.FC<ObserverViewPanelProps> = ({
                 </span>
               </div>
               <div className="flex items-center gap-1.5">
-                <span className="inline-block w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
+                <span className="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="font-semibold text-xs text-on-surface">External Explorer View</span>
               </div>
             </div>
@@ -144,20 +145,20 @@ export const ObserverViewPanel: React.FC<ObserverViewPanelProps> = ({
       </div>
 
       {/* Raw Deserialized JSON & On-Chain Privacy Checks */}
-      <div className="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant space-y-4">
+      <div className="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant space-y-4 shadow-sm">
         <div className="flex items-center justify-between border-b border-outline-variant/60 pb-3">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-primary text-[20px]">code</span>
             <h3 className="font-bold text-sm text-on-surface">Rust Observer Indexer Payload (GET /api/observer)</h3>
           </div>
-          <span className="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold">
+          <span className="px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold border border-emerald-200">
             Indexer Sync Active
           </span>
         </div>
 
         {observerView ? (
           <div className="space-y-3 font-mono text-xs">
-            <div className="bg-slate-900 text-cyan-300 p-4 rounded-xl border border-slate-800 overflow-x-auto">
+            <div className="bg-slate-900 text-cyan-300 p-4 rounded-xl border border-slate-800 overflow-x-auto shadow-inner">
               <div className="text-slate-400 mb-1">// Deserialized Public Ledger JSON Object:</div>
               <pre className="whitespace-pre-wrap">{JSON.stringify(observerView, null, 2)}</pre>
             </div>
@@ -165,19 +166,19 @@ export const ObserverViewPanel: React.FC<ObserverViewPanelProps> = ({
             <div className="bg-surface-container-low p-3 rounded-xl border border-outline-variant space-y-2 text-xs">
               <div className="flex items-center justify-between">
                 <span className="text-on-surface-variant font-medium">Diagnosis Code present on public ledger?</span>
-                <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <span className="text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   FALSE (100% ZK-Shielded)
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-on-surface-variant font-medium">Procedure Code present on public ledger?</span>
-                <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <span className="text-on-surface-variant font-medium font-sans">Procedure Code present on public ledger?</span>
+                <span className="text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-sans">
                   FALSE (100% ZK-Shielded)
                 </span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-on-surface-variant font-medium">Clinical Treatment Notes present on public ledger?</span>
-                <span className="text-emerald-700 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                <span className="text-on-surface-variant font-medium font-sans">Clinical Treatment Notes present on public ledger?</span>
+                <span className="text-emerald-700 font-bold bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 font-sans">
                   FALSE (100% ZK-Shielded)
                 </span>
               </div>
@@ -193,3 +194,4 @@ export const ObserverViewPanel: React.FC<ObserverViewPanelProps> = ({
     </div>
   );
 };
+

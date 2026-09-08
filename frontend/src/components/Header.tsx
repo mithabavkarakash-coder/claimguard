@@ -30,7 +30,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="h-16 w-full max-w-[1600px] mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
         {/* Left: Brand Logo & Navigation */}
         <div className="flex items-center gap-6 md:gap-8">
-          <AegisHealthLogo className="h-7 w-auto" />
+          <AegisHealthLogo className="h-7 w-auto" brandText="AegisHealth" />
           
           <nav className="hidden lg:flex items-center gap-6 h-16">
             <button

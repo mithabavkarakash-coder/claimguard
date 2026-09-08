@@ -41,11 +41,11 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
     <div className="bg-surface-container-lowest rounded-2xl p-6 md:p-8 border border-outline-variant shadow-[0_1px_3px_0_rgba(15,23,42,0.04),0_1px_2px_-1px_rgba(15,23,42,0.02)]">
       <form className="space-y-6" onSubmit={onSubmit}>
         
-        {/* Field 0: Policy ID (Public Attribute) */}
+        {/* Field 0: Policy Identifier */}
         <div className="space-y-1">
           <label className="flex items-center justify-between font-semibold text-xs text-on-surface" htmlFor="policy-id">
             <span>Policy Identifier (Public Ledger Attribute)</span>
-            <span className="text-on-surface-variant text-[11px]">SPC Core Contract</span>
+            <span className="text-on-surface-variant font-mono text-[11px]">SPC Core Contract</span>
           </label>
           <input
             id="policy-id"
@@ -57,7 +57,7 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
           />
         </div>
 
-        {/* Field 1: Procedure Code */}
+        {/* Field 1: Standardized Procedure Code (CPT / HCPCS) */}
         <div className="space-y-1">
           <label className="flex items-center justify-between font-semibold text-xs text-on-surface" htmlFor="procedure-code">
             <span>Standardized Procedure Code (CPT / HCPCS)</span>
@@ -70,13 +70,16 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
               onChange={(e) => setProcedureCode(e.target.value)}
               className="w-full h-11 appearance-none bg-surface-container-lowest border border-outline-variant rounded-lg px-4 font-sans text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all cursor-pointer pr-10"
             >
-              <option value="101">CPT 101 - General Cardiology Consultation (Allowed)</option>
-              <option value="102">CPT 102 - Comprehensive Diagnostic Lab (Allowed)</option>
-              <option value="103">CPT 103 - CT Head / Radiology (Allowed)</option>
-              <option value="104">CPT 104 - Preventive Screening (Allowed)</option>
-              <option value="201">CPT 201 - Outpatient Rehabilitation (Allowed)</option>
-              <option value="99214">CPT 99214 - Outpatient Visit Est Moderate 30-39 min</option>
+              <option value="99214">CPT 99214 - Office/Outpatient Visit Est Moderate 30-39 min</option>
               <option value="70450">CPT 70450 - CT Head/Brain without Contrast</option>
+              <option value="99396">CPT 99396 - Preventive Visit 40-64 yrs</option>
+              <option value="99285">CPT 99285 - Emergency Dept Visit High Severity/Threat</option>
+              <option value="80053">CPT 80053 - Comprehensive Metabolic Panel</option>
+              <option value="101">CPT 101 - General Cardiology Consultation</option>
+              <option value="102">CPT 102 - Comprehensive Diagnostic Lab</option>
+              <option value="103">CPT 103 - CT Head / Radiology</option>
+              <option value="104">CPT 104 - Preventive Screening</option>
+              <option value="201">CPT 201 - Outpatient Rehabilitation</option>
               <option value="999">CPT 999 - Uncovered Elective Procedure (Will Reject)</option>
             </select>
             <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant text-[20px]">
@@ -103,10 +106,10 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
                 value={claimAmount}
                 onChange={(e) => setClaimAmount(e.target.value)}
                 placeholder="0.00"
-                className="w-full h-11 pl-7 pr-24 bg-surface-container-lowest border border-outline-variant rounded-lg font-mono text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
+                className="w-full h-11 pl-7 pr-32 bg-surface-container-lowest border border-outline-variant rounded-lg font-mono text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
                 required
               />
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold text-[10px] uppercase bg-surface-container-low px-2 py-0.5 rounded">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold text-[10px] uppercase bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/40">
                 USD • Settlement
               </div>
             </div>
@@ -127,10 +130,10 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
                 type="number"
                 value={deductibleLimit}
                 onChange={(e) => setDeductibleLimit(e.target.value)}
-                className="w-full h-11 pl-7 pr-12 bg-surface-container-lowest border border-outline-variant rounded-lg font-mono text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
+                className="w-full h-11 pl-7 pr-16 bg-surface-container-lowest border border-outline-variant rounded-lg font-mono text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
                 required
               />
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold text-[10px] uppercase bg-surface-container-low px-1.5 py-0.5 rounded">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant font-bold text-[10px] uppercase bg-surface-container-low px-2 py-0.5 rounded border border-outline-variant/40">
                 Cap
               </div>
             </div>
@@ -140,11 +143,11 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
         {/* Field 3: Diagnosis Code (Masked / Private Witness) */}
         <div className="space-y-1">
           <div className="flex items-center justify-between">
-            <label className="flex items-center gap-1 font-semibold text-xs text-on-surface" htmlFor="diagnosis-code">
+            <label className="flex items-center gap-1.5 font-semibold text-xs text-on-surface" htmlFor="diagnosis-code">
               <span className="material-symbols-outlined text-[16px] text-primary">lock</span>
               <span>Clinical Diagnosis Coding (ICD-10-CM)</span>
             </label>
-            <div className="flex items-center gap-1 bg-primary-fixed text-on-primary-fixed px-2 py-0.5 rounded-full border border-primary/20">
+            <div className="flex items-center gap-1 bg-primary-fixed text-on-primary-fixed px-2.5 py-0.5 rounded-full border border-primary/20">
               <span className="material-symbols-outlined text-[12px]">security</span>
               <span className="text-[10px] font-bold uppercase tracking-wider">ZK-Shielded Private Data</span>
             </div>
@@ -155,18 +158,18 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
               type="text"
               value={diagnosisCode}
               onChange={(e) => setDiagnosisCode(e.target.value)}
-              placeholder="e.g. 4201 (ICD-10)"
-              className="w-full h-11 px-4 bg-surface-container-low border border-outline-variant rounded-lg font-mono text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
+              placeholder="e.g. 4201 (ICD-10 Encrypted ZK-Payload)"
+              className="w-full h-11 px-4 pr-44 bg-surface-container-low border border-outline-variant rounded-lg font-mono text-xs text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/15 transition-all"
               required
             />
-            <div className="absolute right-3 flex items-center gap-2 text-on-surface-variant">
+            <div className="absolute right-3 flex items-center gap-2 text-on-surface-variant pointer-events-none">
               <span className="material-symbols-outlined text-[18px]">visibility_off</span>
               <span className="font-mono text-[11px] text-outline">HASH: 0x9B...D41E</span>
             </div>
           </div>
-          <p className="text-[11px] text-on-surface-variant flex items-center gap-1 pt-0.5">
+          <p className="text-[11px] text-on-surface-variant flex items-center gap-1.5 pt-0.5">
             <span className="material-symbols-outlined text-[14px] text-secondary">info</span>
-            Diagnostic payload remains locally locked in your private witness. Only computational zero-knowledge proofs are generated during validation.
+            Diagnostic payload remains locally locked in user private witness. Only computational zero-knowledge proofs are generated during validation.
           </p>
         </div>
 
@@ -204,7 +207,7 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
             id="submit-button"
             type="submit"
             disabled={isSubmitting || !walletConnected}
-            className="w-full sm:w-auto min-w-[280px] h-12 flex items-center justify-center gap-2 px-6 bg-primary hover:bg-tertiary disabled:opacity-50 text-on-primary font-semibold text-xs rounded-lg shadow-md hover:shadow-lg active:scale-[0.99] transition-all cursor-pointer"
+            className="w-full sm:w-auto min-w-[280px] h-12 flex items-center justify-center gap-2 px-6 bg-primary hover:bg-tertiary disabled:opacity-50 text-on-primary font-semibold text-xs rounded-xl shadow-md hover:shadow-lg active:scale-[0.99] transition-all cursor-pointer"
           >
             {isSubmitting ? (
               <>
@@ -224,3 +227,4 @@ export const ClaimSubmissionForm: React.FC<ClaimSubmissionFormProps> = ({
     </div>
   );
 };
+
