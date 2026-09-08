@@ -19,6 +19,31 @@ ClaimGuard is a privacy-preserving healthcare insurance claim validation platfor
 
 ---
 
+## Application User Interface & Screenshots
+
+### 1. Direct Clinical Claim Ingestion & Witness Creation
+![Claims Submission](ui/01-claim-submission.png)
+
+### 2. Zero-Knowledge Public Claim Attestation & Payout
+![Public Claim Attestation State](ui/02-attestation-status.png)
+
+### 3. Institutional Claims Registry & Settlement Audit
+![Institutional Claims Registry](ui/03-claims-registry.png)
+
+### 4. On-Chain Ledger Explorer & Blind Adjudication Verification
+![On-Chain Explorer](ui/04-onchain-explorer.png)
+
+### 5. Rust Observer Indexer JSON Payload Verification (`/api/observer`)
+![Observer Indexer Payload](ui/05-observer-indexer-payload.png)
+
+### 6. HIPAA & GDPR Cryptographic Compliance Specifications
+![Compliance & Audit](ui/06-compliance-audit.png)
+
+### 7. Formally Verified Compact Circuit Specifications
+![Circuit Specifications](ui/07-circuit-specifications.png)
+
+---
+
 ## Product Proposal Mapping
 
 This project maps directly to the official approved healthcare track idea list:
@@ -44,8 +69,9 @@ ClaimGuard is engineered as a robust **Rust Cargo Workspace** paired with a ligh
 ├── managed/                          # Compiled ZK circuit artifacts, proving keys (.pk/.vk)
 │   ├── deployment_info.json
 │   └── test_output.txt
-└── frontend/                        # Vite + React + TypeScript Lace Wallet UI
-    └── src/App.tsx
+├── frontend/                        # Vite + React + TypeScript Lace Wallet UI
+│   └── src/App.tsx
+└── ui/                              # Application UI Screenshots & Visual Artifacts
 ```
 
 ### Why Rust for CLI, Indexer, and Tests?
@@ -236,6 +262,7 @@ Processed Commitments  : 1 unique commitment registered
 ## Submission Checklist Verification
 - [x] Public GitHub repo with complete README
 - [x] Live demo link works ([https://claimguard-midnight.vercel.app](https://claimguard-midnight.vercel.app))
+- [x] Application UI Screenshots and Visual Artifacts added to repository (`ui/`)
 - [x] Screenshot/Terminal Output of compile output (circuits listed via Rust CLI)
 - [x] Screenshot/Terminal Output of deployed contract address (`0x02a7b8e9...7d8e9` on Preprod)
 - [x] Screenshot/Terminal Output of test output (4/4 Rust tests passing)
