@@ -28,6 +28,9 @@ jobs:
       - name: Rust Cache
         uses: Swatinem/rust-cache@v2
 
+      - name: Cargo Format Check
+        run: cargo fmt --check
+
       - name: Cargo Build Workspace
         run: cargo build --workspace --verbose
 
@@ -42,6 +45,5 @@ jobs:
 
       - name: Build Frontend React Bundle
         run: |
-          cd frontend
-          npm install
-          npm run build
+          npm --prefix frontend install
+          npm --prefix frontend run build

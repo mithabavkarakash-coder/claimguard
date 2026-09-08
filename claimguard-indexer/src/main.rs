@@ -27,7 +27,8 @@ fn main() {
     println!("   🕵️ ClaimGuard Observer & Indexer Service (Rust)          ");
     println!("============================================================");
 
-    let listener = TcpListener::bind("127.0.0.1:3030").expect("Failed to bind HTTP server on 127.0.0.1:3030");
+    let listener =
+        TcpListener::bind("127.0.0.1:3030").expect("Failed to bind HTTP server on 127.0.0.1:3030");
     println!("Server listening on http://127.0.0.1:3030");
     println!("Observer API endpoint: http://127.0.0.1:3030/api/observer");
     println!("============================================================");
@@ -37,7 +38,10 @@ fn main() {
         let _ = stream.read(&mut buffer);
 
         let request_str = String::from_utf8_lossy(&buffer);
-        println!("🔍 [Observer Service] Request: {}", request_str.lines().next().unwrap_or(""));
+        println!(
+            "🔍 [Observer Service] Request: {}",
+            request_str.lines().next().unwrap_or("")
+        );
 
         let observer_data = ObserverView {
             contract_address: "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9".to_string(),

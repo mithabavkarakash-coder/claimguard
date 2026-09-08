@@ -17,7 +17,9 @@ fn test_valid_claim_within_policy_limits_approved() {
 
     let commitment = "0xa1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0";
 
-    let result = simulator.validate_claim(&witness, commitment).expect("Circuit execution failed");
+    let result = simulator
+        .validate_claim(&witness, commitment)
+        .expect("Circuit execution failed");
 
     assert!(result.is_valid, "Valid claim must pass circuit validation");
     assert_eq!(result.claim_status, ClaimStatus::Approved);
@@ -43,9 +45,14 @@ fn test_claim_exceeding_deductible_limit_rejected() {
 
     let commitment = "0xb2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef01";
 
-    let result = simulator.validate_claim(&witness, commitment).expect("Circuit execution failed");
+    let result = simulator
+        .validate_claim(&witness, commitment)
+        .expect("Circuit execution failed");
 
-    assert!(!result.is_valid, "Claim exceeding policy deductible limit must be rejected");
+    assert!(
+        !result.is_valid,
+        "Claim exceeding policy deductible limit must be rejected"
+    );
     assert_eq!(result.claim_status, ClaimStatus::Rejected);
     assert_eq!(result.authorized_amount, 0);
     assert_eq!(simulator.claim_status, ClaimStatus::Rejected);
@@ -75,7 +82,10 @@ fn test_duplicate_claim_submission_rejected() {
 
     // Second submission with identical commitment must fail (anti-replay)
     let duplicate_res = simulator.validate_claim(&witness, commitment);
-    assert!(duplicate_res.is_err(), "Duplicate claim commitment must be rejected");
+    assert!(
+        duplicate_res.is_err(),
+        "Duplicate claim commitment must be rejected"
+    );
     assert_eq!(
         duplicate_res.unwrap_err(),
         "Duplicate claim commitment detected"
@@ -99,9 +109,14 @@ fn test_uncovered_procedure_code_rejected() {
 
     let commitment = "0xd4e5f67890123456789abcdef0123456789abcdef0123456789abcdef03";
 
-    let result = simulator.validate_claim(&witness, commitment).expect("Circuit execution failed");
+    let result = simulator
+        .validate_claim(&witness, commitment)
+        .expect("Circuit execution failed");
 
-    assert!(!result.is_valid, "Uncovered procedure code must be rejected by circuit logic");
+    assert!(
+        !result.is_valid,
+        "Uncovered procedure code must be rejected by circuit logic"
+    );
     assert_eq!(result.claim_status, ClaimStatus::Rejected);
     assert_eq!(result.authorized_amount, 0);
 }

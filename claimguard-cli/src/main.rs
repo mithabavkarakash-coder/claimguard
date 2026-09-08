@@ -87,7 +87,10 @@ fn run_compile(contract_path: &str) -> Result<(), String> {
 
     let script_path = Path::new("scripts/compile_contract.js");
     if !script_path.exists() {
-        return Err(format!("Compiler runner script missing at {:?}", script_path));
+        return Err(format!(
+            "Compiler runner script missing at {:?}",
+            script_path
+        ));
     }
 
     let status: ExitStatus = Command::new("node")
@@ -96,7 +99,10 @@ fn run_compile(contract_path: &str) -> Result<(), String> {
         .map_err(|e| format!("Failed to shell out to Compact compiler: {}", e))?;
 
     if !status.success() {
-        return Err(format!("Compact compiler exited with status code {:?}", status.code()));
+        return Err(format!(
+            "Compact compiler exited with status code {:?}",
+            status.code()
+        ));
     }
 
     let manifest_path = Path::new("managed/claim_validation/compiler_output.json");
@@ -121,7 +127,10 @@ fn run_compile(contract_path: &str) -> Result<(), String> {
         println!("\n[{}] Circuit Name: {}", idx + 1, circuit.name);
         println!("    Type            : {}", circuit.circuit_type);
         println!("    Public Inputs   : {}", circuit.public_inputs.join(", "));
-        println!("    Private Witness : {}", circuit.private_witness.join(", "));
+        println!(
+            "    Private Witness : {}",
+            circuit.private_witness.join(", ")
+        );
         println!("    Circuit Outputs : {}", circuit.outputs.join(", "));
         println!("    Complexity      : {}", circuit.size_constraint);
         println!("    Prover Key (.pk): {}", circuit.pk_file);
@@ -178,7 +187,9 @@ fn run_deploy(network: &str) -> Result<(), String> {
 }
 
 fn run_query(address: Option<String>, network: &str) -> Result<(), String> {
-    let target_addr = address.unwrap_or_else(|| "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9".to_string());
+    let target_addr = address.unwrap_or_else(|| {
+        "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9".to_string()
+    });
 
     println!("============================================================");
     println!("   🔍 ClaimGuard On-Chain Public Ledger Query               ");

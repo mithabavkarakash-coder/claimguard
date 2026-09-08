@@ -40,7 +40,8 @@ impl ClaimValidationCircuitSimulator {
             policy_id,
             claim_status: ClaimStatus::Unsubmitted,
             authorized_amount: 0,
-            claim_commitment: "0x0000000000000000000000000000000000000000000000000000000000000000".to_string(),
+            claim_commitment: "0x0000000000000000000000000000000000000000000000000000000000000000"
+                .to_string(),
             processed_commitments: HashSet::new(),
             deductible_limit,
         }
