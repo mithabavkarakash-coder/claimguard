@@ -1,6 +1,7 @@
 import React from 'react';
 import { AegisHealthLogo } from './AegisHealthLogo';
 import { LaceWalletBar } from './LaceWalletBar';
+import { WalletProvider } from '../utils/cardanoWallet';
 
 export type NavTab = 'claims-submission' | 'claims-registry' | 'on-chain-explorer' | 'compliance-audit';
 
@@ -11,7 +12,8 @@ interface HeaderProps {
   isConnecting: boolean;
   walletAddress: string;
   nightBalance: string;
-  onConnect: () => void;
+  walletProvider?: WalletProvider | null;
+  onConnect: (provider?: WalletProvider) => void;
   onDisconnect: () => void;
 }
 
@@ -22,6 +24,7 @@ export const Header: React.FC<HeaderProps> = ({
   isConnecting,
   walletAddress,
   nightBalance,
+  walletProvider,
   onConnect,
   onDisconnect
 }) => {
@@ -93,6 +96,7 @@ export const Header: React.FC<HeaderProps> = ({
             isConnecting={isConnecting}
             walletAddress={walletAddress}
             nightBalance={nightBalance}
+            walletProvider={walletProvider}
             onConnect={onConnect}
             onDisconnect={onDisconnect}
           />

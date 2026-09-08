@@ -6,6 +6,7 @@ import { PublicResultPanel } from './components/PublicResultPanel';
 import { ObserverViewPanel, ObserverState } from './components/ObserverViewPanel';
 import { ClaimsRegistryTable } from './components/ClaimsRegistryTable';
 import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
+import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
 
 export default function App() {
   // Navigation State
@@ -14,8 +15,9 @@ export default function App() {
   // Wallet State
   const [walletConnected, setWalletConnected] = useState(true);
   const [isConnecting, setIsConnecting] = useState(false);
-  const [walletAddress] = useState('addr1q8x94ed3920akslw02948271038102938472901847102938479x4e');
-  const [nightBalance] = useState('₳ 1,420.50 ADA / 1,450.00 tNIGHT');
+  const [walletProvider, setWalletProvider] = useState<WalletProvider | null>('Lace');
+  const [walletAddress, setWalletAddress] = useState('addr1q8x94ed3920akslw02948271038102938472901847102938479x4e');
+  const [nightBalance, setNightBalance] = useState('₳ 1,420.50 ADA / 1,450.00 tNIGHT');
 
   // Form State (Private Witness Inputs)
   const [policyId, setPolicyId] = useState('0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130');
@@ -78,22 +80,30 @@ export default function App() {
     return () => clearInterval(interval);
   }, []);
 
-  const handleWalletConnect = () => {
+  const handleWalletConnect = async (provider: WalletProvider = 'Lace') => {
     setIsConnecting(true);
-    setTimeout(() => {
-      setWalletConnected(true);
+    try {
+      const walletState = provider === '1AM' ? await connect1AM() : await connectLace();
+      setWalletConnected(walletState.connected);
+      setWalletProvider(walletState.provider);
+      setWalletAddress(walletState.address);
+      setNightBalance(walletState.balance);
+    } catch (err) {
+      console.error('Wallet connection error:', err);
+    } finally {
       setIsConnecting(false);
-    }, 800);
+    }
   };
 
   const handleWalletDisconnect = () => {
     setWalletConnected(false);
+    setWalletProvider(null);
   };
 
   const handleSubmitClaim = (e: React.FormEvent) => {
     e.preventDefault();
     if (!walletConnected) {
-      alert('Please connect your Lace Wallet first.');
+      alert('Please connect your Lace or 1AM Wallet first.');
       return;
     }
 
@@ -153,6 +163,7 @@ export default function App() {
         isConnecting={isConnecting}
         walletAddress={walletAddress}
         nightBalance={nightBalance}
+        walletProvider={walletProvider}
         onConnect={handleWalletConnect}
         onDisconnect={handleWalletDisconnect}
       />
