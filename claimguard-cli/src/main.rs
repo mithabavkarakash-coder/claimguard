@@ -151,7 +151,7 @@ fn run_deploy(network: &str) -> Result<(), String> {
     println!("Target Network: {}", network);
 
     let policy_id = "0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130";
-    let contract_address = "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7";
+    let contract_address = "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9";
     let tx_hash = "0x8f7a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a";
 
     let deploy_info = DeploymentInfo {
@@ -188,7 +188,7 @@ fn run_deploy(network: &str) -> Result<(), String> {
 
 fn run_query(address: Option<String>, network: &str) -> Result<(), String> {
     let target_addr = address.unwrap_or_else(|| {
-        "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7".to_string()
+        "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9".to_string()
     });
 
     println!("============================================================");
