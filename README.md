@@ -42,6 +42,15 @@ ClaimGuard is a privacy-preserving healthcare insurance claim validation platfor
 ### 7. Formally Verified Compact Circuit Specifications
 ![Circuit Specifications](ui/07-circuit-specifications.png)
 
+### 8. Web3 Wallet Selection Modal (Lace & 1AM Wallet Integration)
+![Wallet Selection Modal](ui/08-wallet-selection-modal.png)
+
+### 9. 1AM Midnight Wallet Permission & Cipher Authorization Prompt
+![1AM Wallet Connection Prompt](ui/09-1am-wallet-connection-prompt.png)
+
+### 10. Shielded Holdings & Midnight Testnet Connected Wallet View
+![1AM Wallet Shielded Balances](ui/10-1am-wallet-shielded-balances.png)
+
 ---
 
 ## Product Proposal Mapping
