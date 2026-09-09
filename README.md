@@ -13,7 +13,7 @@ ClaimGuard is a privacy-preserving healthcare insurance claim validation platfor
 
 ## Live Demo & Resources
 
-- **Live Application Demo**: [https://claimguard-midnight.vercel.app](https://claimguard-midnight.vercel.app)
+- **Live Application Demo**: [https://claimguard-lyart.vercel.app/](https://claimguard-lyart.vercel.app/)
 - **1-Minute Video Demonstration**: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo)
 - **GitHub Repository**: [https://github.com/mithabavkarakash-coder/Stellar-Pharma-Chain-SPC-](https://github.com/mithabavkarakash-coder/Stellar-Pharma-Chain-SPC-)
 
@@ -270,7 +270,7 @@ Processed Commitments  : 1 unique commitment registered
 
 ## Submission Checklist Verification
 - [x] Public GitHub repo with complete README
-- [x] Live demo link works ([https://claimguard-midnight.vercel.app](https://claimguard-midnight.vercel.app))
+- [x] Live demo link works ([https://claimguard-lyart.vercel.app/](https://claimguard-lyart.vercel.app/))
 - [x] Application UI Screenshots and Visual Artifacts added to repository (`ui/`)
 - [x] Screenshot/Terminal Output of compile output (circuits listed via Rust CLI)
 - [x] Screenshot/Terminal Output of deployed contract address (`0x02a7b8e9...7d8e9` on Preprod)
