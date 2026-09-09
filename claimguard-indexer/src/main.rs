@@ -44,7 +44,7 @@ fn main() {
         );
 
         let observer_data = ObserverView {
-            contract_address: "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9".to_string(),
+            contract_address: "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7".to_string(),
             policy_id: "0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130".to_string(),
             claim_status: "Approved".to_string(),
             authorized_amount: 2450,

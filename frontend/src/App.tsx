@@ -7,8 +7,11 @@ import { ObserverViewPanel, ObserverState } from './components/ObserverViewPanel
 import { ClaimsRegistryTable } from './components/ClaimsRegistryTable';
 import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
+import { getContractConfig } from './config/contractConfig';
 
 export default function App() {
+  const contractConfig = getContractConfig();
+
   // Navigation State
   const [activeTab, setActiveTab] = useState<NavTab>('claims-submission');
 
@@ -46,7 +49,7 @@ export default function App() {
 
   // Observer View State
   const [observerView, setObserverView] = useState<ObserverState | null>({
-    contract_address: '0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9',
+    contract_address: contractConfig.address,
     policy_id: '0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130',
     claim_status: 'Approved',
     authorized_amount: 2450,
@@ -102,6 +105,10 @@ export default function App() {
 
   const handleSubmitClaim = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!contractConfig.isValid) {
+      alert(contractConfig.errorMessage || 'ClaimGuard contract address is not configured correctly');
+      return;
+    }
     if (!walletConnected) {
       alert('Please connect your Lace or 1AM Wallet first.');
       return;
@@ -172,6 +179,16 @@ export default function App() {
       <main className="w-full pt-20 pb-12 flex-1">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 space-y-8">
           
+          {!contractConfig.isValid && (
+            <div className="bg-red-500/10 border border-red-500/40 rounded-xl p-4 text-red-700 dark:text-red-400 flex items-center gap-3 shadow-sm" role="alert">
+              <span className="material-symbols-outlined text-red-500 text-2xl">error</span>
+              <div>
+                <div className="font-bold text-sm">Contract Configuration Error</div>
+                <div className="text-xs">{contractConfig.errorMessage}</div>
+              </div>
+            </div>
+          )}
+
           {/* Header Hero Banner & Protocol Indicator */}
           <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-outline-variant/40 gap-4">
             <div className="space-y-1">
