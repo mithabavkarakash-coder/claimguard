@@ -6,6 +6,8 @@ import { PublicResultPanel } from './components/PublicResultPanel';
 import { ObserverViewPanel, ObserverState } from './components/ObserverViewPanel';
 import { ClaimsRegistryTable } from './components/ClaimsRegistryTable';
 import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
+import { DashboardStatsOverview } from './components/DashboardStatsOverview';
+import { ContractInfoPanel } from './components/ContractInfoPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
 import { getContractConfig } from './config/contractConfig';
 
@@ -197,10 +199,10 @@ export default function App() {
                 <span>Midnight Network Protocol • Zero-Knowledge Adjudication</span>
               </div>
               <h1 className="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">
-                Direct Clinical Claim Ingestion
+                ClaimGuard Healthcare Settlement Dashboard
               </h1>
               <p className="text-xs md:text-sm text-on-surface-variant max-w-3xl leading-relaxed">
-                Construct an off-chain cryptographic witness for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast.
+                Construct off-chain cryptographic witnesses for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast.
               </p>
             </div>
 
@@ -212,6 +214,23 @@ export default function App() {
               </div>
             </div>
           </div>
+
+          {/* Dashboard Metrics Overview */}
+          <DashboardStatsOverview
+            contractConfig={contractConfig}
+            walletConnected={walletConnected}
+            walletProvider={walletProvider}
+            totalClaimsCount={4}
+            approvedCount={3}
+            rejectedCount={1}
+            pendingCount={0}
+          />
+
+          {/* Contract Information Panel */}
+          <ContractInfoPanel
+            contractConfig={contractConfig}
+            policyId={policyId}
+          />
 
           {/* TAB 1: CLAIMS SUBMISSION */}
           {activeTab === 'claims-submission' && (
