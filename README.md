@@ -145,7 +145,10 @@ The `ClaimValidation.compact` contract exposes two primary zero-knowledge circui
 
 ## Demo Video
 
-- **Working Application Video Demonstration**: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo)
+- **Application Walkthrough Demonstration**: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo)
+
+> [!NOTE]
+> **Demo Video Link Status**: The current URL uses the placeholder slug `claimguard-midnight-demo` (which yields "Video unavailable"). Once the video recording is uploaded, replace the `claimguard-midnight-demo` slug with your official 11-character YouTube Video ID (e.g., `https://youtu.be/YOUR_VIDEO_ID_HERE`).
 
 ---
 
@@ -354,5 +357,5 @@ npm --prefix frontend exec tsc -- -p frontend/tsconfig.json
 | Passing CI/CD | [x] | Verified GitHub Actions workflow run 34858437313 (`conclusion: success`) |
 | CI/CD badge | [x] | Embedded passing status badge at the top of README.md |
 | Product X profile | [ ] | Profile handle registration in progress ([https://x.com/ClaimGuardZKP](https://x.com/ClaimGuardZKP)) |
-| Demo video | [x] | 1-minute video demonstration: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo) |
+| Demo video | [ ] | Link: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo) *(Requires replacing `claimguard-midnight-demo` placeholder slug with published 11-character YouTube Video ID)* |
 | Minimum 15 meaningful commits | [x] | 33 structured, meaningful commits in git history |
