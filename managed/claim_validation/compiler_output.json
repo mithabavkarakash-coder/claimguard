@@ -2,7 +2,7 @@
   "contractName": "ClaimValidation",
   "sourceFile": "contract/claim_validation.compact",
   "compilerVersion": "compactc-v0.14.2-midnight",
-  "compiledAt": "2026-09-14T12:51:15.654Z",
+  "compiledAt": "2026-09-14T14:45:11.521Z",
   "circuits": [
     {
       "name": "validateClaim",

@@ -1,4 +1,4 @@
-name: ClaimGuard Rust CI/CD Pipeline
+name: ClaimGuard CI/CD Pipeline
 
 on:
   push:
@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-test-lint:
-    name: Rust Build, Compact Compile, Test & Clippy Lint
+    name: ClaimGuard Rust & React Build, Lint, Test & Compile
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: frontend/package-lock.json
 
       - name: Rust Cache
         uses: Swatinem/rust-cache@v2
@@ -34,7 +36,7 @@ jobs:
       - name: Cargo Build Workspace
         run: cargo build --workspace --verbose
 
-      - name: Compile Compact Contract & Circuits via Rust CLI
+      - name: Compile Compact Smart Contract & ZK Circuits via CLI
         run: cargo run -p claimguard-cli -- compile
 
       - name: Run Rust Integration Test Suite
@@ -43,7 +45,11 @@ jobs:
       - name: Run Clippy Linter (-D warnings)
         run: cargo clippy --workspace -- -D warnings
 
+      - name: Install Frontend Dependencies
+        run: npm --prefix frontend install
+
+      - name: Run Frontend TypeScript Typecheck
+        run: npm --prefix frontend exec tsc -- -p tsconfig.json
+
       - name: Build Frontend React Bundle
-        run: |
-          npm --prefix frontend install
-          npm --prefix frontend run build
+        run: npm --prefix frontend run build

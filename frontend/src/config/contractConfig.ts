@@ -29,16 +29,22 @@ export function isValidEvmAddress(address: string | undefined | null): boolean {
  * isValid is set to false so the application shows a clear error message instead of crashing.
  */
 export function getContractConfig(): ContractConfig {
+  const metaEnv = (import.meta as Record<string, any>).env || {};
+  const globalProc = (globalThis as Record<string, any>).process;
+  const procEnv = globalProc?.env || {};
+
   const envAddress =
-    (import.meta.env.VITE_CONTRACT_ADDRESS as string) ||
-    (import.meta.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string) ||
-    (typeof process !== 'undefined' ? (process.env?.VITE_CONTRACT_ADDRESS || process.env?.NEXT_PUBLIC_CONTRACT_ADDRESS) : undefined) ||
+    (metaEnv.VITE_CONTRACT_ADDRESS as string) ||
+    (metaEnv.NEXT_PUBLIC_CONTRACT_ADDRESS as string) ||
+    (procEnv.VITE_CONTRACT_ADDRESS as string) ||
+    (procEnv.NEXT_PUBLIC_CONTRACT_ADDRESS as string) ||
     '0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba';
 
   const network =
-    (import.meta.env.VITE_NETWORK as string) ||
-    (import.meta.env.NEXT_PUBLIC_NETWORK as string) ||
-    (typeof process !== 'undefined' ? (process.env?.VITE_NETWORK || process.env?.NEXT_PUBLIC_NETWORK) : undefined) ||
+    (metaEnv.VITE_NETWORK as string) ||
+    (metaEnv.NEXT_PUBLIC_NETWORK as string) ||
+    (procEnv.VITE_NETWORK as string) ||
+    (procEnv.NEXT_PUBLIC_NETWORK as string) ||
     'preprod';
 
   const cleanAddress = envAddress.trim();
