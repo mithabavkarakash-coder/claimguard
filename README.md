@@ -137,9 +137,10 @@ The `ClaimValidation.compact` contract exposes two primary zero-knowledge circui
 
 ---
 
-## Product X Profile
+## Product & Community
 
-- **Official Product X Profile**: [https://x.com/ClaimGuardZKP](https://x.com/ClaimGuardZKP) *(Note: Profile handle registration in progress)*
+- **Official Product X (Twitter) Profile**: [https://x.com/claimguardhq](https://x.com/claimguardhq)
+- **Official Handle**: [@claimguardhq](https://x.com/claimguardhq)
 
 ---
 
@@ -356,6 +357,6 @@ npm --prefix frontend exec tsc -- -p frontend/tsconfig.json
 | CI/CD workflow | [x] | Configured in `.github/workflows/ci.yml` |
 | Passing CI/CD | [x] | Verified GitHub Actions workflow run 34858437313 (`conclusion: success`) |
 | CI/CD badge | [x] | Embedded passing status badge at the top of README.md |
-| Product X profile | [ ] | Profile handle registration in progress ([https://x.com/ClaimGuardZKP](https://x.com/ClaimGuardZKP)) |
+| Product X profile | [x] | Live official X profile: [https://x.com/claimguardhq](https://x.com/claimguardhq) |
 | Demo video | [ ] | Link: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo) *(Requires replacing `claimguard-midnight-demo` placeholder slug with published 11-character YouTube Video ID)* |
 | Minimum 15 meaningful commits | [x] | 33 structured, meaningful commits in git history |
