@@ -1,6 +1,6 @@
 # ClaimGuard (Stellar Pharma Chain - SPC) 🛡️⚕️
 
-![CI Status](https://github.com/mithabavkarakash-coder/Stellar-Pharma-Chain-SPC-/actions/workflows/ci.yml/badge.svg)
+[![ClaimGuard CI/CD Pipeline](https://github.com/mithabavkarakash-coder/claimguard/actions/workflows/ci.yml/badge.svg)](https://github.com/mithabavkarakash-coder/claimguard/actions/workflows/ci.yml)
 ![Midnight Preprod](https://img.shields.io/badge/Midnight-Preprod_Testnet-cyan)
 ![Rust Workspace](https://img.shields.io/badge/Rust-Cargo_Workspace-orange)
 ![Compact ZK](https://img.shields.io/badge/Compact-ZK_Circuits-indigo)
@@ -15,7 +15,7 @@ ClaimGuard is a privacy-preserving healthcare insurance claim validation platfor
 
 - **Live Application Demo**: [https://claimguard-lyart.vercel.app/](https://claimguard-lyart.vercel.app/)
 - **1-Minute Video Demonstration**: [https://youtu.be/claimguard-midnight-demo](https://youtu.be/claimguard-midnight-demo)
-- **GitHub Repository**: [https://github.com/mithabavkarakash-coder/Stellar-Pharma-Chain-SPC-](https://github.com/mithabavkarakash-coder/Stellar-Pharma-Chain-SPC-)
+- **GitHub Repository**: [https://github.com/mithabavkarakash-coder/claimguard](https://github.com/mithabavkarakash-coder/claimguard)
 
 ---
 
