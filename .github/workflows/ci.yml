@@ -49,7 +49,7 @@ jobs:
         run: npm --prefix frontend install
 
       - name: Run Frontend TypeScript Typecheck
-        run: npm --prefix frontend exec tsc -- -p tsconfig.json
+        run: npm --prefix frontend exec tsc -- -p frontend/tsconfig.json
 
       - name: Build Frontend React Bundle
         run: npm --prefix frontend run build
