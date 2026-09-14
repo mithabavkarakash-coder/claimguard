@@ -30,13 +30,15 @@ export function isValidEvmAddress(address: string | undefined | null): boolean {
  */
 export function getContractConfig(): ContractConfig {
   const envAddress =
+    (import.meta.env.VITE_CONTRACT_ADDRESS as string) ||
     (import.meta.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string) ||
-    (typeof process !== 'undefined' ? process.env?.NEXT_PUBLIC_CONTRACT_ADDRESS : undefined) ||
-    '0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9';
+    (typeof process !== 'undefined' ? (process.env?.VITE_CONTRACT_ADDRESS || process.env?.NEXT_PUBLIC_CONTRACT_ADDRESS) : undefined) ||
+    '0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba';
 
   const network =
+    (import.meta.env.VITE_NETWORK as string) ||
     (import.meta.env.NEXT_PUBLIC_NETWORK as string) ||
-    (typeof process !== 'undefined' ? process.env?.NEXT_PUBLIC_NETWORK : undefined) ||
+    (typeof process !== 'undefined' ? (process.env?.VITE_NETWORK || process.env?.NEXT_PUBLIC_NETWORK) : undefined) ||
     'preprod';
 
   const cleanAddress = envAddress.trim();

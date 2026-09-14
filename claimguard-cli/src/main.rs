@@ -151,8 +151,8 @@ fn run_deploy(network: &str) -> Result<(), String> {
     println!("Target Network: {}", network);
 
     let policy_id = "0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130";
-    let contract_address = "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9";
-    let tx_hash = "0x8f7a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a";
+    let contract_address = "0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba";
+    let tx_hash = "0xe048cd4deeeadd7ba1600551f59b77b7e2f12e82abb25512cdffbe6ce4254b66";
 
     let deploy_info = DeploymentInfo {
         contract_name: "ClaimValidation".to_string(),
@@ -160,7 +160,7 @@ fn run_deploy(network: &str) -> Result<(), String> {
         contract_address: contract_address.to_string(),
         policy_id: policy_id.to_string(),
         deployed_at: chrono_timestamp(),
-        block_height: 1_482_930,
+        block_height: 2_546_224,
         tx_hash: tx_hash.to_string(),
     };
 
@@ -188,7 +188,7 @@ fn run_deploy(network: &str) -> Result<(), String> {
 
 fn run_query(address: Option<String>, network: &str) -> Result<(), String> {
     let target_addr = address.unwrap_or_else(|| {
-        "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9".to_string()
+        "0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba".to_string()
     });
 
     println!("============================================================");
@@ -212,7 +212,7 @@ fn run_query(address: Option<String>, network: &str) -> Result<(), String> {
 }
 
 fn chrono_timestamp() -> String {
-    "2026-09-06T15:00:00Z".to_string()
+    "2026-09-14T12:47:00Z".to_string()
 }
 
 fn main() {

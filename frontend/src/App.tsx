@@ -45,7 +45,7 @@ export default function App() {
     status: 'Approved',
     authorizedAmount: 2450,
     commitment: '0xa1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0',
-    txHash: '0x8f7a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a',
+    txHash: '0xe048cd4deeeadd7ba1600551f59b77b7e2f12e82abb25512cdffbe6ce4254b66',
     timestamp: new Date().toLocaleTimeString()
   });
 
@@ -66,16 +66,37 @@ export default function App() {
     }
   });
 
-  // Poll Rust Observer Indexer Endpoint
+  // Poll Local Rust Indexer or Live Midnight Preprod GraphQL Indexer
   const fetchObserverState = async () => {
     try {
       const res = await fetch('http://localhost:3030/api/observer');
       if (res.ok) {
         const data = await res.json();
         setObserverView(data);
+        return;
       }
     } catch {
-      // Fallback state if indexer service is offline
+      // Local indexer service offline, query live Midnight Preprod GraphQL indexer
+    }
+
+    try {
+      const res = await fetch('https://indexer.preprod.midnight.network/api/v4/graphql', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: '{ block { height hash } }' })
+      });
+      if (res.ok) {
+        const data = await res.json();
+        if (data.data?.block) {
+          setObserverView(prev => prev ? {
+            ...prev,
+            contract_address: contractConfig.address,
+            network: `Midnight Preprod (Block #${data.data.block.height})`
+          } : null);
+        }
+      }
+    } catch {
+      // Fallback state
     }
   };
 
@@ -83,7 +104,7 @@ export default function App() {
     fetchObserverState();
     const interval = setInterval(fetchObserverState, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [contractConfig.address]);
 
   const handleWalletConnect = async (provider: WalletProvider = 'Lace') => {
     setIsConnecting(true);

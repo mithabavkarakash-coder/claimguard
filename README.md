@@ -114,7 +114,7 @@ cargo run -p claimguard-cli -- deploy --network preprod
 
 ### 4. Query Public On-Chain Ledger State (Independent Verification)
 ```bash
-cargo run -p claimguard-cli -- query --network preprod --address 0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9
+cargo run -p claimguard-cli -- query --network preprod --address 0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba
 ```
 
 ### 5. Launch Rust Observer/Indexer Service
@@ -132,13 +132,14 @@ npm run dev
 
 ---
 
-## Deployed Preprod Contract Address
+## Deployed Preprod Contract Address & On-Chain Verification
 
-- **Network**: Midnight Preprod Testnet
-- **Contract Address**: `0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9`
+- **Network**: Midnight Preprod
+- **Contract Address**: `0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba`
+- **Deployment / Transaction**: `0xe048cd4deeeadd7ba1600551f59b77b7e2f12e82abb25512cdffbe6ce4254b66` (Block height: `2,546,224`)
+- **Explorer / Indexer Verification**: [https://midnight-explorer-sand.vercel.app/](https://midnight-explorer-sand.vercel.app/) & [https://indexer.preprod.midnight.network/api/v4/graphql](https://indexer.preprod.midnight.network/api/v4/graphql)
+- **Live Demo**: [https://claimguard-lyart.vercel.app/](https://claimguard-lyart.vercel.app/)
 - **Policy ID**: `0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130`
-- **Deployment Tx Hash**: `0x8f7a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a`
-- **Block Height**: `1,482,930`
 
 ---
 
@@ -174,7 +175,7 @@ npm run dev
 ### Verified Observer View Output (`claimguard-indexer`):
 ```json
 {
-  "contract_address": "0x02a7b8e9f1c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9",
+  "contract_address": "0xb7a3e8c3ec8b93abbaaa1520e6ca8f86aaa4f42cd6e9cc37114a3fe302c220ba",
   "policy_id": "0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130",
   "claim_status": "Approved",
   "authorized_amount": 2450,
