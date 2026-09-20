@@ -3,7 +3,7 @@ import { AegisHealthLogo } from './AegisHealthLogo';
 import { LaceWalletBar } from './LaceWalletBar';
 import { WalletProvider } from '../utils/cardanoWallet';
 
-export type NavTab = 'claims-submission' | 'claims-registry' | 'on-chain-explorer' | 'compliance-audit';
+export type NavTab = 'claims-submission' | 'claims-registry' | 'on-chain-explorer' | 'compliance-audit' | 'policy-studio';
 
 interface HeaderProps {
   activeTab: NavTab;
@@ -70,6 +70,17 @@ export const Header: React.FC<HeaderProps> = ({
             </button>
 
             <button
+              onClick={() => setActiveTab('policy-studio')}
+              className={`transition-colors flex items-center h-full px-1 text-sm font-medium border-b-2 cursor-pointer ${
+                activeTab === 'policy-studio'
+                  ? 'text-primary font-semibold border-primary'
+                  : 'text-on-surface-variant hover:text-on-surface border-transparent'
+              }`}
+            >
+              Policy Studio
+            </button>
+
+            <button
               onClick={() => setActiveTab('compliance-audit')}
               className={`transition-colors flex items-center h-full px-1 text-sm font-medium border-b-2 cursor-pointer ${
                 activeTab === 'compliance-audit'
@@ -128,6 +139,14 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           Explorer
+        </button>
+        <button
+          onClick={() => setActiveTab('policy-studio')}
+          className={`px-3 py-1.5 text-xs font-semibold rounded-md whitespace-nowrap ${
+            activeTab === 'policy-studio' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+          }`}
+        >
+          Policy Studio
         </button>
         <button
           onClick={() => setActiveTab('compliance-audit')}

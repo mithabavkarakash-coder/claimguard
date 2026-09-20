@@ -6,6 +6,7 @@ import { PublicResultPanel } from './components/PublicResultPanel';
 import { ObserverViewPanel, ObserverState } from './components/ObserverViewPanel';
 import { ClaimsRegistryTable } from './components/ClaimsRegistryTable';
 import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
+import { PolicyStudioPanel, PolicyDefinition, PRESET_POLICIES } from './components/PolicyStudioPanel';
 import { DashboardStatsOverview } from './components/DashboardStatsOverview';
 import { ContractInfoPanel } from './components/ContractInfoPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
@@ -24,12 +25,15 @@ export default function App() {
   const [walletAddress, setWalletAddress] = useState('addr1q8x94ed3920akslw02948271038102938472901847102938479x4e');
   const [nightBalance, setNightBalance] = useState('₳ 1,420.50 ADA / 1,450.00 tNIGHT');
 
+  // Policy State
+  const [currentPolicy, setCurrentPolicy] = useState<PolicyDefinition>(PRESET_POLICIES[0]);
+
   // Form State (Private Witness Inputs)
-  const [policyId, setPolicyId] = useState('0x5350435f504f4c4943595f323032365f4845414c54485f47554152445f563130');
+  const [policyId, setPolicyId] = useState(PRESET_POLICIES[0].hexId);
   const [diagnosisCode, setDiagnosisCode] = useState('4201');
   const [procedureCode, setProcedureCode] = useState('101');
   const [claimAmount, setClaimAmount] = useState('2450');
-  const [deductibleLimit, setDeductibleLimit] = useState('5000');
+  const [deductibleLimit, setDeductibleLimit] = useState(PRESET_POLICIES[0].deductibleLimit.toString());
   const [treatmentNotes, setTreatmentNotes] = useState('Patient evaluated for recurrent focal headache. Zero focal deficits noted. Diagnostic imaging initiated.');
 
   // Execution & Result State
@@ -145,13 +149,14 @@ export default function App() {
       setTimeout(() => {
         setExecutionStep('Emitting public ledger state to Midnight Preprod...');
         setTimeout(() => {
-          const allowedProcedures = ['101', '102', '103', '104', '201', '99214', '70450'];
+          const allowedProcedures = currentPolicy ? currentPolicy.allowedProcedures : ['101', '102', '103', '104', '201', '99214', '70450'];
+          const copayRatio = currentPolicy ? currentPolicy.copayRatio : 90;
           const amt = parseFloat(claimAmount);
           const limit = parseFloat(deductibleLimit);
 
           const isValid = allowedProcedures.includes(procedureCode) && amt <= limit;
           const status: 'Approved' | 'Rejected' = isValid ? 'Approved' : 'Rejected';
-          const authorizedAmount = isValid ? amt : 0;
+          const authorizedAmount = isValid ? Math.round((amt * copayRatio) / 100) : 0;
 
           const randomCommitment = '0x' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
           const randomTx = '0x' + Array.from({ length: 64 }, () => Math.floor(Math.random() * 16).toString(16)).join('');
@@ -181,6 +186,18 @@ export default function App() {
         }, 1000);
       }, 1000);
     }, 1000);
+  };
+
+  const handleApplyPolicy = (newPolicy: PolicyDefinition) => {
+    setCurrentPolicy(newPolicy);
+    setPolicyId(newPolicy.hexId);
+    setDeductibleLimit(newPolicy.deductibleLimit.toString());
+    if (observerView) {
+      setObserverView({
+        ...observerView,
+        policy_id: newPolicy.hexId
+      });
+    }
   };
 
   return (
@@ -313,7 +330,15 @@ export default function App() {
             />
           )}
 
-          {/* TAB 4: COMPLIANCE & AUDIT */}
+          {/* TAB 4: POLICY STUDIO */}
+          {activeTab === 'policy-studio' && (
+            <PolicyStudioPanel
+              currentPolicy={currentPolicy}
+              onApplyPolicy={handleApplyPolicy}
+            />
+          )}
+
+          {/* TAB 5: COMPLIANCE & AUDIT */}
           {activeTab === 'compliance-audit' && (
             <ComplianceAuditPanel />
           )}
