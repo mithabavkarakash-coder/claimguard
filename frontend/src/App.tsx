@@ -5,10 +5,10 @@ import { SettlementLifecycleStepper } from './components/SettlementLifecycleStep
 import { PublicResultPanel } from './components/PublicResultPanel';
 import { ObserverViewPanel, ObserverState } from './components/ObserverViewPanel';
 import { ClaimsRegistryTable } from './components/ClaimsRegistryTable';
-import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
 import { PolicyStudioPanel, PolicyDefinition, PRESET_POLICIES } from './components/PolicyStudioPanel';
 import { DashboardStatsOverview } from './components/DashboardStatsOverview';
 import { ContractInfoPanel } from './components/ContractInfoPanel';
+import { AnalyticsDashboardPanel } from './components/AnalyticsDashboardPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
 import { getContractConfig } from './config/contractConfig';
 
@@ -341,6 +341,15 @@ export default function App() {
           {/* TAB 5: COMPLIANCE & AUDIT */}
           {activeTab === 'compliance-audit' && (
             <ComplianceAuditPanel />
+          )}
+
+          {/* TAB 5: ANALYTICS DASHBOARD */}
+          {activeTab === 'analytics-dashboard' && (
+            <AnalyticsDashboardPanel
+              currentClaim={claimResult}
+              walletAddress={walletAddress}
+              nightBalance={nightBalance}
+            />
           )}
 
         </div>

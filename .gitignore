@@ -7,3 +7,5 @@ managed/*.pk
 managed/*.vk
 .env
 *.log
+*.zip
+

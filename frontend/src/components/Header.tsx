@@ -3,7 +3,7 @@ import { AegisHealthLogo } from './AegisHealthLogo';
 import { LaceWalletBar } from './LaceWalletBar';
 import { WalletProvider } from '../utils/cardanoWallet';
 
-export type NavTab = 'claims-submission' | 'claims-registry' | 'on-chain-explorer' | 'compliance-audit' | 'policy-studio';
+export type NavTab = 'claims-submission' | 'claims-registry' | 'on-chain-explorer' | 'compliance-audit' | 'policy-studio' | 'analytics-dashboard';
 
 interface HeaderProps {
   activeTab: NavTab;
@@ -45,6 +45,17 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               Claims Submission
+            </button>
+
+            <button
+              onClick={() => setActiveTab('analytics-dashboard')}
+              className={`transition-colors flex items-center h-full px-1 text-sm font-medium border-b-2 cursor-pointer ${
+                activeTab === 'analytics-dashboard'
+                  ? 'text-primary font-semibold border-primary'
+                  : 'text-on-surface-variant hover:text-on-surface border-transparent'
+              }`}
+            >
+              Analytics Dashboard
             </button>
             
             <button
@@ -123,6 +134,14 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           Claims
+        </button>
+        <button
+          onClick={() => setActiveTab('analytics-dashboard')}
+          className={`px-3 py-1.5 text-xs font-semibold rounded-md whitespace-nowrap ${
+            activeTab === 'analytics-dashboard' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+          }`}
+        >
+          Analytics
         </button>
         <button
           onClick={() => setActiveTab('claims-registry')}
