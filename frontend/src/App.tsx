@@ -9,6 +9,7 @@ import { PolicyStudioPanel, PolicyDefinition, PRESET_POLICIES } from './componen
 import { DashboardStatsOverview } from './components/DashboardStatsOverview';
 import { ContractInfoPanel } from './components/ContractInfoPanel';
 import { AnalyticsDashboardPanel } from './components/AnalyticsDashboardPanel';
+import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
 import { getContractConfig } from './config/contractConfig';
 
