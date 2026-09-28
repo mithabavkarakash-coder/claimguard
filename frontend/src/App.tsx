@@ -10,6 +10,8 @@ import { DashboardStatsOverview } from './components/DashboardStatsOverview';
 import { ContractInfoPanel } from './components/ContractInfoPanel';
 import { AnalyticsDashboardPanel } from './components/AnalyticsDashboardPanel';
 import { ComplianceAuditPanel } from './components/ComplianceAuditPanel';
+import { PatientVaultPanel } from './components/PatientVaultPanel';
+import { BatchSettlementPanel } from './components/BatchSettlementPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
 import { getContractConfig } from './config/contractConfig';
 
@@ -344,13 +346,23 @@ export default function App() {
             <ComplianceAuditPanel />
           )}
 
-          {/* TAB 5: ANALYTICS DASHBOARD */}
+          {/* TAB 6: ANALYTICS DASHBOARD */}
           {activeTab === 'analytics-dashboard' && (
             <AnalyticsDashboardPanel
               currentClaim={claimResult}
               walletAddress={walletAddress}
               nightBalance={nightBalance}
             />
+          )}
+
+          {/* TAB 7: PATIENT MEDICAL VAULT & ZK CONSENT MANAGER */}
+          {activeTab === 'patient-vault' && (
+            <PatientVaultPanel />
+          )}
+
+          {/* TAB 8: BATCH CLAIM SETTLEMENT PORTAL */}
+          {activeTab === 'batch-settlement' && (
+            <BatchSettlementPanel />
           )}
 
         </div>

@@ -3,7 +3,7 @@ import { AegisHealthLogo } from './AegisHealthLogo';
 import { LaceWalletBar } from './LaceWalletBar';
 import { WalletProvider } from '../utils/cardanoWallet';
 
-export type NavTab = 'claims-submission' | 'claims-registry' | 'on-chain-explorer' | 'compliance-audit' | 'policy-studio' | 'analytics-dashboard';
+export type NavTab = 'claims-submission' | 'analytics-dashboard' | 'patient-vault' | 'batch-settlement' | 'claims-registry' | 'on-chain-explorer' | 'policy-studio' | 'compliance-audit';
 
 interface HeaderProps {
   activeTab: NavTab;
@@ -56,6 +56,28 @@ export const Header: React.FC<HeaderProps> = ({
               }`}
             >
               Analytics Dashboard
+            </button>
+
+            <button
+              onClick={() => setActiveTab('patient-vault')}
+              className={`transition-colors flex items-center h-full px-1 text-sm font-medium border-b-2 cursor-pointer ${
+                activeTab === 'patient-vault'
+                  ? 'text-primary font-semibold border-primary'
+                  : 'text-on-surface-variant hover:text-on-surface border-transparent'
+              }`}
+            >
+              Patient Vault
+            </button>
+
+            <button
+              onClick={() => setActiveTab('batch-settlement')}
+              className={`transition-colors flex items-center h-full px-1 text-sm font-medium border-b-2 cursor-pointer ${
+                activeTab === 'batch-settlement'
+                  ? 'text-primary font-semibold border-primary'
+                  : 'text-on-surface-variant hover:text-on-surface border-transparent'
+              }`}
+            >
+              Batch Portal
             </button>
             
             <button
@@ -142,6 +164,22 @@ export const Header: React.FC<HeaderProps> = ({
           }`}
         >
           Analytics
+        </button>
+        <button
+          onClick={() => setActiveTab('patient-vault')}
+          className={`px-3 py-1.5 text-xs font-semibold rounded-md whitespace-nowrap ${
+            activeTab === 'patient-vault' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+          }`}
+        >
+          Vault
+        </button>
+        <button
+          onClick={() => setActiveTab('batch-settlement')}
+          className={`px-3 py-1.5 text-xs font-semibold rounded-md whitespace-nowrap ${
+            activeTab === 'batch-settlement' ? 'bg-primary text-on-primary' : 'text-on-surface-variant'
+          }`}
+        >
+          Batch
         </button>
         <button
           onClick={() => setActiveTab('claims-registry')}
