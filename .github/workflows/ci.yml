@@ -46,10 +46,10 @@ jobs:
         run: cargo clippy --workspace -- -D warnings
 
       - name: Install Frontend Dependencies
-        run: npm --prefix frontend install
+        run: npm ci --prefix frontend
 
       - name: Run Frontend TypeScript Typecheck
-        run: npm --prefix frontend exec tsc -- -p tsconfig.json
+        run: npm run typecheck --prefix frontend
 
       - name: Build Frontend React Bundle
-        run: npm --prefix frontend run build
+        run: npm run build --prefix frontend
