@@ -14,9 +14,12 @@ import { PatientVaultPanel } from './components/PatientVaultPanel';
 import { BatchSettlementPanel } from './components/BatchSettlementPanel';
 import { WalletProvider, connectLace, connect1AM } from './utils/cardanoWallet';
 import { getContractConfig } from './config/contractConfig';
+import { useToast } from './components/ToastNotificationSystem';
+import { FraudRiskScorePanel } from './components/FraudRiskScorePanel';
 
 export default function App() {
   const contractConfig = getContractConfig();
+  const { addToast } = useToast();
 
   // Navigation State
   const [activeTab, setActiveTab] = useState<NavTab>('claims-submission');
@@ -146,11 +149,29 @@ export default function App() {
 
     setIsSubmitting(true);
     setExecutionStep('Generating Zero-Knowledge witness proof locally...');
+    addToast({
+      type: 'zk-proof',
+      title: 'ZK Witness Generation Started',
+      message: 'Constructing Groth16 proof for private witness inputs off-chain…',
+      duration: 4000,
+    });
 
     setTimeout(() => {
       setExecutionStep('Executing Compact ZK circuit (validateClaim)...');
+      addToast({
+        type: 'zk-proof',
+        title: 'Compact ZK Circuit Running',
+        message: 'Evaluating validateClaim() — 1,420 R1CS constraints on BLS12-381…',
+        duration: 4000,
+      });
       setTimeout(() => {
         setExecutionStep('Emitting public ledger state to Midnight Preprod...');
+        addToast({
+          type: 'info',
+          title: 'Broadcasting to Midnight Preprod',
+          message: 'Emitting shielded state commitment to public ledger…',
+          duration: 4000,
+        });
         setTimeout(() => {
           const allowedProcedures = currentPolicy ? currentPolicy.allowedProcedures : ['101', '102', '103', '104', '201', '99214', '70450'];
           const copayRatio = currentPolicy ? currentPolicy.copayRatio : 90;
@@ -175,6 +196,26 @@ export default function App() {
           setClaimResult(newResult);
           setIsSubmitting(false);
           setExecutionStep(null);
+
+          // Fire result toast
+          if (status === 'Approved') {
+            addToast({
+              type: 'success',
+              title: 'Claim Approved ✓',
+              message: `Authorized payout: $${authorizedAmount.toLocaleString()} USD. On-chain settlement confirmed.`,
+              duration: 7000,
+              txHash: randomTx,
+              commitment: randomCommitment,
+            });
+          } else {
+            addToast({
+              type: 'error',
+              title: 'Claim Rejected',
+              message: `Procedure code ${procedureCode} is not covered or amount exceeds deductible limit.`,
+              duration: 7000,
+              commitment: randomCommitment,
+            });
+          }
 
           // Update local observer projection
           if (observerView) {
@@ -308,11 +349,22 @@ export default function App() {
                 </section>
 
                 {/* Sidebar Column (4 cols) */}
-                <aside className="lg:col-span-4">
+                <aside className="lg:col-span-4 flex flex-col gap-6">
                   <SettlementLifecycleStepper
                     commitment={claimResult?.commitment || '0xa1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0'}
                     isSubmitting={isSubmitting}
                     status={claimResult?.status || 'Pending'}
+                  />
+
+                  {/* Fraud Risk Score Panel */}
+                  <FraudRiskScorePanel
+                    claimAmount={parseFloat(claimAmount) || 0}
+                    procedureCode={procedureCode}
+                    diagnosisCode={diagnosisCode}
+                    deductibleLimit={parseFloat(deductibleLimit) || 10000}
+                    policyId={policyId}
+                    commitment={claimResult?.commitment || '0xa1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef01'}
+                    animateOnChange={true}
                   />
                 </aside>
 
