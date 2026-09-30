@@ -289,7 +289,7 @@ const SignalBar: React.FC<{ signal: FraudSignal; delay: number }> = ({ signal, d
               {signal.flagged ? signal.icon : 'check'}
             </span>
           </div>
-          <span style={{ fontSize: '12px', fontWeight: 600, color: '#1e293b', truncate: 'true' as 'true' }}>
+          <span style={{ fontSize: '12px', fontWeight: 600, color: '#1e293b', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
             {signal.label}
           </span>
         </div>
