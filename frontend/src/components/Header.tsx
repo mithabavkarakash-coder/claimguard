@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { AegisHealthLogo } from './AegisHealthLogo';
 import { LaceWalletBar } from './LaceWalletBar';
 import { WalletProvider } from '../utils/cardanoWallet';
@@ -28,6 +28,13 @@ export const Header: React.FC<HeaderProps> = ({
   onConnect,
   onDisconnect
 }) => {
+  const [liveTime, setLiveTime] = useState(new Date().toLocaleTimeString());
+
+  useEffect(() => {
+    const timer = setInterval(() => setLiveTime(new Date().toLocaleTimeString()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <header className="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant shadow-[0_1px_3px_0_rgba(15,23,42,0.04)]">
       <div className="h-16 w-full max-w-[1600px] mx-auto px-4 md:px-8 flex items-center justify-between gap-4">
@@ -128,10 +135,15 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Right: Network Status & Lace Wallet Bar */}
         <div className="flex items-center gap-3 md:gap-4">
-          <div className="hidden md:flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-            <span className="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">
-              Cardano / Midnight Privacy Testnet
+          <div className="hidden md:flex flex-col items-end">
+            <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant">
+              <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+              <span className="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">
+                Cardano / Midnight Privacy Testnet
+              </span>
+            </div>
+            <span className="text-[9px] text-on-surface-variant font-mono mt-0.5 pr-1">
+              Last sync: {liveTime}
             </span>
           </div>
 

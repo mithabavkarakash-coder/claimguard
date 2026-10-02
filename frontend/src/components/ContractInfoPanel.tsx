@@ -20,13 +20,18 @@ export const ContractInfoPanel: React.FC<ContractInfoPanelProps> = ({ contractCo
             <p className="text-[11px] text-on-surface-variant">Live Midnight Compact Smart Contract Protocol</p>
           </div>
         </div>
-        <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200 uppercase tracking-wider flex items-center gap-1">
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          Live Preprod
-        </span>
+        <div className="flex items-center gap-2">
+          <span className="px-2 py-0.5 rounded-full bg-violet-50 text-violet-700 text-[9px] font-bold border border-violet-200 uppercase tracking-wider hidden sm:inline-flex">
+            Hackathon Track
+          </span>
+          <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200 uppercase tracking-wider flex items-center gap-1">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+            Live Preprod
+          </span>
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-mono">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 text-xs font-mono">
         {/* Network */}
         <div className="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 space-y-1">
           <span className="text-[10px] text-on-surface-variant font-bold uppercase font-sans">Network</span>
@@ -47,6 +52,12 @@ export const ContractInfoPanel: React.FC<ContractInfoPanelProps> = ({ contractCo
           <div className="font-bold text-on-surface truncate" title={defaultPolicyId}>
             {defaultPolicyId.slice(0, 10)}...{defaultPolicyId.slice(-8)}
           </div>
+        </div>
+
+        {/* Deployed */}
+        <div className="bg-surface-container-low p-3 rounded-lg border border-outline-variant/40 space-y-1">
+          <span className="text-[10px] text-on-surface-variant font-bold uppercase font-sans">Deployed</span>
+          <div className="font-bold text-on-surface">2026-10-02</div>
         </div>
 
         {/* Explorer */}

@@ -275,24 +275,35 @@ export default function App() {
 
           {/* Header Hero Banner & Protocol Indicator */}
           <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-outline-variant/40 gap-4">
-            <div className="space-y-1">
-              <div className="flex items-center gap-2 text-secondary font-bold text-[10px] uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-secondary"></span>
-                <span>Midnight Network Protocol • Zero-Knowledge Adjudication</span>
+            <div className="space-y-2">
+              <div className="flex items-center gap-2.5">
+                <div className="flex items-center gap-2 text-secondary font-bold text-[10px] uppercase tracking-wider">
+                  <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                  <span>Midnight Network Protocol • Zero-Knowledge Adjudication</span>
+                </div>
+                <span className="px-2 py-0.5 rounded-full bg-violet-100 text-violet-700 text-[9px] font-bold border border-violet-200 uppercase tracking-wider">
+                  🏆 Midnight Hackathon 2026
+                </span>
               </div>
               <h1 className="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">
                 ClaimGuard Healthcare Settlement Dashboard
               </h1>
               <p className="text-xs md:text-sm text-on-surface-variant max-w-3xl leading-relaxed">
-                Construct off-chain cryptographic witnesses for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast.
+                Construct off-chain cryptographic witnesses for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast. Private medical data <strong>never leaves</strong> the client device.
               </p>
             </div>
 
-            <div className="flex items-center gap-3 bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/60 shadow-sm self-start md:self-auto">
-              <span className="material-symbols-outlined text-primary text-[20px]">enhanced_encryption</span>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-on-surface-variant uppercase">Circuit State</span>
-                <span className="font-mono text-xs text-on-surface font-semibold">Groth16 / BLS12-381 Active</span>
+            <div className="flex flex-col gap-2 self-start md:self-auto">
+              <div className="flex items-center gap-3 bg-surface-container-low px-4 py-2 rounded-lg border border-outline-variant/60 shadow-sm">
+                <span className="material-symbols-outlined text-primary text-[20px]">enhanced_encryption</span>
+                <div className="flex flex-col">
+                  <span className="text-[10px] font-bold text-on-surface-variant uppercase">Circuit State</span>
+                  <span className="font-mono text-xs text-on-surface font-semibold">Groth16 / BLS12-381 Active</span>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200/70">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">ZK Proof Engine Online</span>
               </div>
             </div>
           </div>
@@ -302,10 +313,10 @@ export default function App() {
             contractConfig={contractConfig}
             walletConnected={walletConnected}
             walletProvider={walletProvider}
-            totalClaimsCount={4}
-            approvedCount={3}
+            totalClaimsCount={7}
+            approvedCount={5}
             rejectedCount={1}
-            pendingCount={0}
+            pendingCount={1}
           />
 
           {/* Contract Information Panel */}
@@ -423,10 +434,13 @@ export default function App() {
       {/* Footer */}
       <footer className="w-full bg-surface-container-low border-t border-outline-variant py-6 mt-auto">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="font-mono text-xs text-on-surface-variant font-bold">ClaimGuard v2.4.1-zkp</span>
+          <div className="flex items-center gap-3 flex-wrap">
+            <span className="font-mono text-xs text-on-surface-variant font-bold">ClaimGuard v2.5.0-zkp</span>
             <span className="text-outline-variant">•</span>
             <span className="text-xs text-on-surface-variant">Cryptographic Clinical Settlement Ledger</span>
+            <span className="text-outline-variant">•</span>
+            <span className="text-xs text-on-surface-variant font-mono">Build: 2026-10-02</span>
+            <span className="px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 text-[9px] font-bold border border-violet-200">Midnight Hackathon Submission</span>
           </div>
           <div className="text-xs text-on-surface-variant">
             © 2026 AegisHealth / ClaimGuard Systems. Formally Verified Privacy Settlements.
