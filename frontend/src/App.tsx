@@ -276,7 +276,7 @@ export default function App() {
           {/* Header Hero Banner & Protocol Indicator */}
           <div className="flex flex-col md:flex-row md:items-end justify-between pb-6 border-b border-outline-variant/40 gap-4">
             <div className="space-y-2">
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center gap-2.5 flex-wrap">
                 <div className="flex items-center gap-2 text-secondary font-bold text-[10px] uppercase tracking-wider">
                   <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
                   <span>Midnight Network Protocol • Zero-Knowledge Adjudication</span>
@@ -284,9 +284,13 @@ export default function App() {
                 <span className="px-2 py-0.5 rounded-full bg-violet-100 text-violet-700 text-[9px] font-bold border border-violet-200 uppercase tracking-wider">
                   🏆 Midnight Hackathon 2026
                 </span>
+                <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-bold border border-emerald-300 uppercase tracking-wider flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block"></span>
+                  Live Demo Mode
+                </span>
               </div>
               <h1 className="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">
-                ClaimGuard Healthcare Settlement Dashboard
+                <span className="animate-shimmer">ClaimGuard</span> Healthcare Settlement Dashboard
               </h1>
               <p className="text-xs md:text-sm text-on-surface-variant max-w-3xl leading-relaxed">
                 Construct off-chain cryptographic witnesses for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast. Private medical data <strong>never leaves</strong> the client device.
@@ -313,10 +317,11 @@ export default function App() {
             contractConfig={contractConfig}
             walletConnected={walletConnected}
             walletProvider={walletProvider}
-            totalClaimsCount={7}
-            approvedCount={5}
-            rejectedCount={1}
+            totalClaimsCount={14}
+            approvedCount={11}
+            rejectedCount={2}
             pendingCount={1}
+            zkProofsGenerated={487}
           />
 
           {/* Contract Information Panel */}
@@ -435,11 +440,13 @@ export default function App() {
       <footer className="w-full bg-surface-container-low border-t border-outline-variant py-6 mt-auto">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-wrap">
-            <span className="font-mono text-xs text-on-surface-variant font-bold">ClaimGuard v2.5.0-zkp</span>
+            <span className="font-mono text-xs text-on-surface-variant font-bold">ClaimGuard v2.6.0-zkp</span>
             <span className="text-outline-variant">•</span>
             <span className="text-xs text-on-surface-variant">Cryptographic Clinical Settlement Ledger</span>
             <span className="text-outline-variant">•</span>
-            <span className="text-xs text-on-surface-variant font-mono">Build: 2026-10-02</span>
+            <span className="text-xs text-on-surface-variant font-mono">Build: 2026-10-03</span>
+            <span className="text-outline-variant">•</span>
+            <span className="text-xs text-on-surface-variant font-semibold">Team: MidnightMoon</span>
             <span className="px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 text-[9px] font-bold border border-violet-200">Midnight Hackathon Submission</span>
           </div>
           <div className="text-xs text-on-surface-variant">
