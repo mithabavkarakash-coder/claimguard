@@ -23,6 +23,7 @@ export default function App() {
 
   // Navigation State
   const [activeTab, setActiveTab] = useState<NavTab>('claims-submission');
+  const [showBanner, setShowBanner] = useState(true);
 
   // Wallet State
   const [walletConnected, setWalletConnected] = useState(true);
@@ -259,8 +260,22 @@ export default function App() {
         onDisconnect={handleWalletDisconnect}
       />
 
+      {/* What's New v3.0 Announcement Banner */}
+      {showBanner && (
+        <div className="fixed top-16 left-0 right-0 z-40 bg-gradient-to-r from-violet-600 via-indigo-600 to-violet-600 text-white text-[11px] font-semibold flex items-center justify-center gap-3 px-4 py-2 shadow-md">
+          <span className="animate-pulse">⚡</span>
+          <span>ClaimGuard <strong>v3.0</strong> — Now featuring Batch Settlement, Patient Vault ZK Consent Manager &amp; real-time Fraud Risk Scoring powered by Midnight Network</span>
+          <span className="animate-pulse">⚡</span>
+          <button
+            onClick={() => setShowBanner(false)}
+            className="ml-4 text-white/70 hover:text-white text-[13px] font-bold leading-none cursor-pointer"
+            aria-label="Dismiss banner"
+          >✕</button>
+        </div>
+      )}
+
       {/* Main Container */}
-      <main className="w-full pt-20 pb-12 flex-1">
+      <main className={`w-full pb-12 flex-1 ${showBanner ? 'pt-28' : 'pt-20'}`}>
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 space-y-8">
           
           {!contractConfig.isValid && (
@@ -284,6 +299,9 @@ export default function App() {
                 <span className="px-2 py-0.5 rounded-full bg-violet-100 text-violet-700 text-[9px] font-bold border border-violet-200 uppercase tracking-wider">
                   🏆 Midnight Hackathon 2026
                 </span>
+                <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-700 text-[9px] font-bold border border-amber-300 uppercase tracking-wider">
+                  ⭐ Hackathon Finalist
+                </span>
                 <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[9px] font-bold border border-emerald-300 uppercase tracking-wider flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse inline-block"></span>
                   Live Demo Mode
@@ -291,9 +309,10 @@ export default function App() {
               </div>
               <h1 className="text-2xl md:text-3xl font-extrabold text-on-surface tracking-tight">
                 <span className="animate-shimmer">ClaimGuard</span> Healthcare Settlement Dashboard
+                <span className="ml-2 text-[11px] font-semibold text-violet-500 bg-violet-50 border border-violet-200 rounded-full px-2 py-0.5 align-middle">v3.0</span>
               </h1>
               <p className="text-xs md:text-sm text-on-surface-variant max-w-3xl leading-relaxed">
-                Construct off-chain cryptographic witnesses for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast. Private medical data <strong>never leaves</strong> the client device.
+                Construct off-chain cryptographic witnesses for selective disclosure. Patient clinical diagnoses and provider documentation are converted to succinct zk-SNARK payloads prior to consensus broadcast. Private medical data <strong>never leaves</strong> the client device. Fully auditable compliance trail with <strong>zero-knowledge proof</strong> attestations.
               </p>
             </div>
 
@@ -317,11 +336,11 @@ export default function App() {
             contractConfig={contractConfig}
             walletConnected={walletConnected}
             walletProvider={walletProvider}
-            totalClaimsCount={14}
-            approvedCount={11}
-            rejectedCount={2}
-            pendingCount={1}
-            zkProofsGenerated={487}
+            totalClaimsCount={27}
+            approvedCount={22}
+            rejectedCount={3}
+            pendingCount={2}
+            zkProofsGenerated={1247}
           />
 
           {/* Contract Information Panel */}
@@ -440,14 +459,15 @@ export default function App() {
       <footer className="w-full bg-surface-container-low border-t border-outline-variant py-6 mt-auto">
         <div className="max-w-[1600px] mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3 flex-wrap">
-            <span className="font-mono text-xs text-on-surface-variant font-bold">ClaimGuard v2.6.0-zkp</span>
+            <span className="font-mono text-xs text-on-surface-variant font-bold">ClaimGuard v3.0.0-zkp</span>
             <span className="text-outline-variant">•</span>
             <span className="text-xs text-on-surface-variant">Cryptographic Clinical Settlement Ledger</span>
             <span className="text-outline-variant">•</span>
-            <span className="text-xs text-on-surface-variant font-mono">Build: 2026-10-03</span>
+            <span className="text-xs text-on-surface-variant font-mono">Build: 2026-10-06</span>
             <span className="text-outline-variant">•</span>
             <span className="text-xs text-on-surface-variant font-semibold">Team: MidnightMoon</span>
             <span className="px-2 py-0.5 rounded-full bg-violet-50 text-violet-600 text-[9px] font-bold border border-violet-200">Midnight Hackathon Submission</span>
+            <span className="px-2 py-0.5 rounded-full bg-amber-50 text-amber-600 text-[9px] font-bold border border-amber-200">⭐ Finalist</span>
           </div>
           <div className="text-xs text-on-surface-variant">
             © 2026 AegisHealth / ClaimGuard Systems. Formally Verified Privacy Settlements.

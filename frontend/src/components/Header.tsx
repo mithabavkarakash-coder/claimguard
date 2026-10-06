@@ -29,10 +29,19 @@ export const Header: React.FC<HeaderProps> = ({
   onDisconnect
 }) => {
   const [liveTime, setLiveTime] = useState(new Date().toLocaleTimeString());
+  const [validators, setValidators] = useState(312);
 
   useEffect(() => {
     const timer = setInterval(() => setLiveTime(new Date().toLocaleTimeString()), 1000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    // Simulate live validator count fluctuation
+    const vTimer = setInterval(() => {
+      setValidators(v => v + Math.floor(Math.random() * 3) - 1);
+    }, 5000);
+    return () => clearInterval(vTimer);
   }, []);
 
   return (
@@ -139,12 +148,14 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant">
               <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
               <span className="text-[11px] font-bold text-on-surface-variant uppercase tracking-wider">
-                Cardano / Midnight Privacy Testnet
+                Cardano / Midnight Testnet v3
               </span>
             </div>
-            <span className="text-[9px] text-on-surface-variant font-mono mt-0.5 pr-1">
-              Last sync: {liveTime}
-            </span>
+            <div className="flex items-center gap-2 mt-0.5 pr-1">
+              <span className="text-[9px] text-on-surface-variant font-mono">Last sync: {liveTime}</span>
+              <span className="text-outline-variant text-[9px]">•</span>
+              <span className="text-[9px] text-emerald-600 font-semibold">{validators} validators active</span>
+            </div>
           </div>
 
           <LaceWalletBar
